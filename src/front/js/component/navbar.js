@@ -18,7 +18,7 @@ export const Navbar = () => {
                   Cursos
                 </a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item ">
                 <a class="nav-link " href="#">
                   Crear cuenta
                 </a>
@@ -26,9 +26,10 @@ export const Navbar = () => {
             </ul>
           </div>
         </div>
+
         <div className="row">
           <form class="d-flex" role="search">
-            <button class="btn btn-outline-success" type="submit">
+            <button class="btn btn-outline-success " type="submit">
               Entrar
             </button>
           </form>
