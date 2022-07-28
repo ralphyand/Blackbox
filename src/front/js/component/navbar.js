@@ -1,13 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import logotipo from "../../img/logotipo.jpg";
 
 export const Navbar = () => {
   return (
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
       <div class="container-fluid col-12 mb-3 text-center">
         <div className="row">
-          <a class="navbar-brand" href="#">
-            BlackBox
+          <a href="/">
+            <img
+              src={logotipo}
+              alt="Bootstrap"
+              width="100"
+              height="100"
+              className="rounded-circle"
+            />
           </a>
         </div>
         <div className="row">
@@ -29,9 +36,15 @@ export const Navbar = () => {
 
         <div className="row">
           <form class="d-flex" role="search">
-            <button class="btn btn-outline-success " type="submit">
-              Entrar
-            </button>
+            <Link to="/Loguin">
+              <button
+                to="/Loguin"
+                class="btn btn-outline-success "
+                type="submit"
+              >
+                Entrar
+              </button>
+            </Link>
           </form>
         </div>
       </div>

@@ -12,6 +12,8 @@ export const Home = () => {
     <>
       <div className="carousel">
         <Carousel />
+        <Card />
+        <img className="" src="C:\Users\moise\Desktop\black box\borcelle.jpg" />
       </div>
     </>
   );
