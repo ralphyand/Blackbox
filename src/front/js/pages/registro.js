@@ -5,14 +5,12 @@ import Card from "../component/card";
 
 import "../../styles/home.css";
 
-export const Home = () => {
+export const Registro = () => {
   const { store, actions } = useContext(Context);
 
   return (
     <>
-      <div className="carousel">
-        <Carousel />
-      </div>
+      <Card />
     </>
   );
 };
