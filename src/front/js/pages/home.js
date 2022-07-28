@@ -10,21 +10,21 @@ export const Home = () => {
   const { store, actions } = useContext(Context);
 
   return (
-    <div className="container">
-      <div className="row justify-content-center text-center">
-        <Course />
-        <Course />
-        <Course />
-      </div>
-      <div className="row justify-content-center text-center">
-        <Course />
-        <Course />
-        <Course />
-      </div>
+    <>
       <div className="carousel">
         <Carousel />
       </div>
+      <div className="row justify-content-center text-center">
+        <Course />
+        <Course />
+        <Course />
+      </div>
+      <div className="row justify-content-center text-center">
+        <Course />
+        <Course />
+        <Course />
+      </div>
       <Card />
-    </div>
+    </>
   );
 };
