@@ -36,7 +36,7 @@ export const Navbar = () => {
 
         <div className="row">
           <form class="d-flex" role="search">
-            <Link to="/Loguin">
+            <Link to="/Login">
               <button
                 to="/Loguin"
                 class="btn btn-outline-success "
