@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import Carousel from "../component/carousel";
 import Card from "../component/card";
+import Course from "../component/course";
 
 import "../../styles/home.css";
 
@@ -10,10 +11,10 @@ export const Home = () => {
 
   return (
     <>
-      <div className="carousel">
+      <div className="carousel text-center">
         <Carousel />
 
-        <img className="" src="C:\Users\moise\Desktop\black box\borcelle.jpg" />
+        <Card />
       </div>
     </>
   );
