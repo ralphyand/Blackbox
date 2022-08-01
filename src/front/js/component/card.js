@@ -1,183 +1,263 @@
 import React from "react";
 
 export const Card = () => (
-  <div class="container marketing mt-5">
-    <div class="row">
-      <div class="col-lg-4">
-        <svg
-          class="bd-placeholder-img rounded-circle"
-          width="140"
-          height="140"
-          xmlns="http://www.w3.org/2000/svhttps://images.unsplash.com/photo-1579535984712-92fffbbaa266?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
-          role="img"
-          aria-label="Placeholder: 140x140"
-          preserveAspectRatio="xMidYMid slice"
-          focusable="false"
-        >
-          <title>Placeholder</title>
-          <rect width="100%" height="100%" fill="#767" />
-          <text x="50%" y="50%" fill="#777" dy=".3em">
-            140x140
-          </text>
-        </svg>
+  <div class="album py-3 bg-light">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div class="col">
+          <div class="card shadow-sm">
+            <img
+              src="https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+              class="card-img-top"
+              alt="..."
+            />
 
-        <h2 class="fw-normal">Heading</h2>
-        <p>
-          Some representative placeholder content for the three columns of text
-          below the carousel. This is the first column.
-        </p>
-        <p>
-          <a class="btn btn-secondary" href="#">
-            View details &raquo;
-          </a>
-        </p>
-      </div>
-      <div class="col-lg-4">
-        <svg
-          class="bd-placeholder-img rounded-circle"
-          width="140"
-          height="140"
-          xmlns="https://images.unsplash.com/photo-1579535984712-92fffbbaa266?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
-          role="img"
-          aria-label="Placeholder: 140x140"
-          preserveAspectRatio="xMidYMid slice"
-          focusable="false"
-        >
-          <title>Placeholder</title>
-          <rect width="100%" height="100%" fill="#777" />
-          <text x="50%" y="50%" fill="#777" dy=".3em">
-            140x140
-          </text>
-        </svg>
+            <div class="card-body">
+              <p class="card-text">
+                This is a wider card with supporting text below as a natural
+                lead-in to additional content. This content is a little bit
+                longer.
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button
+                    type="button"
+                    class="btn btn-sm btn-outline-secondary"
+                  >
+                    View
+                  </button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img
+              src="https://images.unsplash.com/photo-1483478550801-ceba5fe50e8e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+              class="card-img-top"
+              alt="..."
+            />
 
-        <h2 class="fw-normal">Heading</h2>
-        <p>
-          Another exciting bit of representative placeholder content. This time,
-          we've moved on to the second column.
-        </p>
-        <p>
-          <a class="btn btn-secondary" href="#">
-            View details &raquo;
-          </a>
-        </p>
-      </div>
-      <div class="col-lg-4">
-        <svg
-          class="bd-placeholder-img rounded-circle"
-          width="140"
-          height="140"
-          xmlns="http://www.w3.org/2000/svg"
-          role="img"
-          aria-label="Placeholder: 140x140"
-          preserveAspectRatio="xMidYMid slice"
-          focusable="false"
-        >
-          <title>Placeholder</title>
-          <rect width="100%" height="100%" fill="#777" />
-          <text x="50%" y="50%" fill="#777" dy=".3em">
-            140x140
-          </text>
-        </svg>
+            <div class="card-body">
+              <p class="card-text">
+                This is a wider card with supporting text below as a natural
+                lead-in to additional content. This content is a little bit
+                longer.
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button
+                    type="button"
+                    class="btn btn-sm btn-outline-secondary"
+                  >
+                    View
+                  </button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img
+              src="https://images.unsplash.com/photo-1588200618450-3a5b1d3b9aa5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+              class="card-img-top"
+              alt="..."
+            />
 
-        <h2 class="fw-normal">Heading</h2>
-        <p>
-          And lastly this, the third column of representative placeholder
-          content.
-        </p>
-        <p>
-          <a class="btn btn-secondary" href="#">
-            View details &raquo;
-          </a>
-        </p>
-      </div>
-    </div>
-    <div class="row mt-5">
-      <div class="col-lg-4">
-        <svg
-          class="bd-placeholder-img rounded-circle"
-          width="140"
-          height="140"
-          xmlns="http://www.w3.org/2000/svg"
-          role="img"
-          aria-label="Placeholder: 140x140"
-          preserveAspectRatio="xMidYMid slice"
-          focusable="false"
-        >
-          <title>Placeholder</title>
-          <rect width="100%" height="100%" fill="#777" />
-          <text x="50%" y="50%" fill="#777" dy=".3em">
-            140x140
-          </text>
-        </svg>
+            <div class="card-body">
+              <p class="card-text">
+                This is a wider card with supporting text below as a natural
+                lead-in to additional content. This content is a little bit
+                longer.
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button
+                    type="button"
+                    class="btn btn-sm btn-outline-secondary"
+                  >
+                    View
+                  </button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
 
-        <h2 class="fw-normal">Heading</h2>
-        <p>
-          Some representative placeholder content for the three columns of text
-          below the carousel. This is the first column.
-        </p>
-        <p>
-          <a class="btn btn-secondary" href="#">
-            View details &raquo;
-          </a>
-        </p>
-      </div>
-      <div class="col-lg-4">
-        <svg
-          class="bd-placeholder-img rounded-circle"
-          width="140"
-          height="140"
-          xmlns="http://www.w3.org/2000/svg"
-          role="img"
-          aria-label="Placeholder: 140x140"
-          preserveAspectRatio="xMidYMid slice"
-          focusable="false"
-        >
-          <title>Placeholder</title>
-          <rect width="100%" height="100%" fill="#777" />
-          <text x="50%" y="50%" fill="#777" dy=".3em">
-            140x140
-          </text>
-        </svg>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img
+              src="https://images.unsplash.com/photo-1516946870798-f970a32afc8c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+              class="card-img-top"
+              alt="..."
+            />
 
-        <h2 class="fw-normal">Heading</h2>
-        <p>
-          Another exciting bit of representative placeholder content. This time,
-          we've moved on to the second column.
-        </p>
-        <p>
-          <a class="btn btn-secondary" href="#">
-            View details &raquo;
-          </a>
-        </p>
-      </div>
-      <div class="col-lg-4">
-        <svg
-          class="bd-placeholder-img rounded-circle"
-          width="140"
-          height="140"
-          xmlns="http://www.w3.org/2000/svg"
-          role="img"
-          aria-label="Placeholder: 140x140"
-          preserveAspectRatio="xMidYMid slice"
-          focusable="false"
-        >
-          <title>Placeholder</title>
-          <rect width="100%" height="100%" fill="#777" />
-          <text x="50%" y="50%" fill="#777" dy=".3em">
-            140x140
-          </text>
-        </svg>
+            <div class="card-body">
+              <p class="card-text">
+                This is a wider card with supporting text below as a natural
+                lead-in to additional content. This content is a little bit
+                longer.
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button
+                    type="button"
+                    class="btn btn-sm btn-outline-secondary"
+                  >
+                    View
+                  </button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img
+              src="https://images.unsplash.com/photo-1480365501497-199581be0e66?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+              class="card-img-top"
+              alt="..."
+            />
 
-        <h2 class="fw-normal">Heading</h2>
-        <p>
-          And lastly this, the third column of representative placeholder
-          content.
-        </p>
-        <p>
-          <a class="btn btn-secondary" href="#">
-            View details &raquo;
-          </a>
-        </p>
+            <div class="card-body">
+              <p class="card-text">
+                This is a wider card with supporting text below as a natural
+                lead-in to additional content. This content is a little bit
+                longer.
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button
+                    type="button"
+                    class="btn btn-sm btn-outline-secondary"
+                  >
+                    View
+                  </button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img
+              src="https://images.unsplash.com/photo-1616843777726-2b35ac7c4215?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+              class="card-img-top"
+              alt="..."
+            />
+
+            <div class="card-body">
+              <p class="card-text">
+                This is a wider card with supporting text below as a natural
+                lead-in to additional content. This content is a little bit
+                longer.
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button
+                    type="button"
+                    class="btn btn-sm btn-outline-secondary"
+                  >
+                    View
+                  </button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card shadow-sm">
+            <img
+              src="https://images.unsplash.com/photo-1534131707746-25d604851a1f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+              class="card-img-top"
+              alt="..."
+            />
+
+            <div class="card-body">
+              <p class="card-text">
+                This is a wider card with supporting text below as a natural
+                lead-in to additional content. This content is a little bit
+                longer.
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button
+                    type="button"
+                    class="btn btn-sm btn-outline-secondary"
+                  >
+                    View
+                  </button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img
+              src="https://images.unsplash.com/photo-1517887433267-127c316d81a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+              class="card-img-top"
+              alt="..."
+            />
+
+            <div class="card-body">
+              <p class="card-text">
+                This is a wider card with supporting text below as a natural
+                lead-in to additional content. This content is a little bit
+                longer.
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button
+                    type="button"
+                    class="btn btn-sm btn-outline-secondary"
+                  >
+                    View
+                  </button>
+                </div>
+                <small class="text-muted">2:00.00 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img
+              src="https://images.unsplash.com/photo-1483478550801-ceba5fe50e8e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+              class="card-img-top"
+              alt="..."
+            />
+
+            <div class="card-body">
+              <p class="card-text">
+                This is a wider card with supporting text below as a natural
+                lead-in to additional content. This content is a little bit
+                longer.
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button
+                    type="button"
+                    class="btn btn-sm btn-outline-secondary"
+                  >
+                    View
+                  </button>
+                </div>
+                <small class="text-muted">59 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

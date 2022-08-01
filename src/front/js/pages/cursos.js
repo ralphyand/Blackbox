@@ -228,7 +228,7 @@ export const Cursos = () => {
                       View
                     </button>
                   </div>
-                  <small class="text-muted">9 mins</small>
+                  <small class="text-muted">2:00.00 mins</small>
                 </div>
               </div>
             </div>
@@ -256,7 +256,7 @@ export const Cursos = () => {
                       View
                     </button>
                   </div>
-                  <small class="text-muted">9 mins</small>
+                  <small class="text-muted">59 mins</small>
                 </div>
               </div>
             </div>
