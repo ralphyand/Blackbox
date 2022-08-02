@@ -13,8 +13,25 @@ export const Home = () => {
     <>
       <div className="carousel text-center">
         <Carousel />
-
-        <Card />
+        <div className="container">
+          <div className="col">
+            <div className="album py-3 bg-light">
+              <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                {store.course.map((course) => {
+                  return (
+                    <Card
+                      time={course.time}
+                      name={course.name}
+                      description={course.description}
+                      imagen={course.imagen}
+                    />
+                  );
+                })}
+              </div>
+              n
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
