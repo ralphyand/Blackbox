@@ -46,7 +46,6 @@ export const Login = () => {
 
   return (
     <div
-      id="login1"
       class="d-flex flex-column min-vh-100 justify-content-center align-items-center"
       id="template-bg-3"
     >
