@@ -14,7 +14,7 @@ export const Card = (props) => (
               Detalles
             </button>
           </div>
-          <small className="text-muted">{props.time}</small>
+          <small className="text-muted">{props.time}min</small>
         </div>
       </div>
     </div>
