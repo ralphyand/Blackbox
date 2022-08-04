@@ -4,8 +4,8 @@ import logotipo from "../../img/logotipo.jpg";
 
 export const Navbar = () => {
   return (
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-      <div class="container-fluid col-12 mb-3 text-center">
+    <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <div className="container-fluid col-12 mb-3 text-center">
         <div className="row">
           <a href="/">
             <img
@@ -18,28 +18,28 @@ export const Navbar = () => {
           </a>
         </div>
         <div className="row">
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav me-auto mb-2 mb-md-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">
+          <div className="collapse navbar-collapse" id="navbarCollapse">
+            <ul className="navbar-nav me-auto mb-2 mb-md-0">
+              <li className="nav-item">
+                <a className="nav-link active" aria-current="page" href="#">
                   Cursos
                 </a>
               </li>
-              <li class="nav-item ">
-                <a class="nav-link " href="#">
+              <li className="nav-item ">
+                <Link to={`/user_register`} className="nav-link " href="#">
                   Crear cuenta
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
         </div>
 
         <div className="row">
-          <form class="d-flex" role="search">
+          <form className="d-flex" role="search">
             <Link to="/Login">
               <button
                 to="/Loguin"
-                class="btn btn-outline-success "
+                className="btn btn-outline-success "
                 type="submit"
               >
                 Entrar
