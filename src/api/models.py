@@ -117,6 +117,7 @@ class Course(db.Model):
             "imagen" : self.imagen,
             "time" : self.time,
             "description" : self.description,
+            "price" : self.price
         }
 
 
@@ -128,6 +129,7 @@ class Compras(db.Model):
     user = db.relationship('User', backref='compras', lazy=True,cascade = "all,delete")
     price = db.Column(db.Float)
     date = db.Column(db.DateTime,default=datetime.datetime.utcnow)
+    
 
     def __repr__(self):
         return f'<Compras {self.id}>'

@@ -21,7 +21,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
       getCourse: () => {
         fetch(
-          "https://3001-ralphyand-blackbox-3knvdqr5faq.ws-eu54.gitpod.io/api/course"
+          "https://3001-ralphyand-blackbox-3knvdqr5faq.ws-eu59.gitpod.io/api/course"
         )
           .then((data) => data.json())
           .then((data) => setStore({ course: data }));

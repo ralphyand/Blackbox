@@ -38,7 +38,7 @@ export const Navbar = () => {
         <div className="row">
           <form class="d-flex" role="search">
             <Link to="/Login">
-              <button to="/Loguin" class="btn btn-outline-light " type="submit">
+              <button to="/Login" class="btn btn-outline-light " type="submit">
                 <i class="fas fa-user-circle" to="/Loguin"></i>
               </button>
             </Link>

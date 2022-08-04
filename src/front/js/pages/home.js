@@ -20,7 +20,7 @@ export const Home = () => {
                 {store.course.map((course) => {
                   return (
                     <Card
-                      time={course.time}
+                      price={course.price}
                       name={course.name}
                       description={course.description}
                       imagen={course.imagen}
