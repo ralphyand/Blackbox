@@ -20,6 +20,7 @@ export const Home = () => {
                 {store.course.map((course) => {
                   return (
                     <Card
+                      id={course.id}
                       price={course.price}
                       name={course.name}
                       description={course.description}

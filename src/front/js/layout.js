@@ -6,12 +6,12 @@ import { Home } from "./pages/home";
 import { Demo } from "./pages/demo";
 import { Single } from "./pages/single";
 import injectContext from "./store/appContext";
+import { Detalles } from "./pages/detalles";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import { Login } from "./pages/login";
 import { Cursos } from "./pages/cursos";
-import { Detalles } from "./pages/detalles";
 
 //create your first component
 const Layout = () => {
@@ -27,10 +27,10 @@ const Layout = () => {
           <Routes>
             <Route element={<Home />} path="/" />
             <Route element={<Login />} path="/login" />
-            <Route element={<Cursos />} path="/Cursos" />
+            <Route element={<Cursos />} path="/Cursos/:id" />
             <Route element={<Demo />} path="/demo" />
             <Route element={<Single />} path="/single/:theid" />
-            <Route element={<Detalles />} path="/detalles" />
+            <Route element={<Detalles />} path="/detalles/:id" />
             <Route element={<h1>Not found!</h1>} />
           </Routes>
           <Footer />

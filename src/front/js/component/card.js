@@ -11,15 +11,14 @@ export const Card = (props) => (
         <p className="card-text">{props.description}</p>
         <div className="d-flex justify-content-between align-items-center">
           <div className="btn-group">
-            <a href="Detalles">
+            <Link to={`/detalles/${props.id}`}>
               <button
-                to="/Detalles "
                 type="button"
                 className="btn btn-sm btn-outline-secondary"
               >
                 Detalles
-              </button>{" "}
-            </a>
+              </button>
+            </Link>
           </div>
           <small className="text-muted">{props.price}€</small>
         </div>

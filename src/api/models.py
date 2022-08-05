@@ -107,7 +107,7 @@ class Course(db.Model):
     temario = db.relationship('Temario', backref='course', lazy=True,cascade = "all,delete")
    
     def __repr__(self):
-        return f'<Courses {self.name}>'
+        return f'<Course {self.name}>'
 
 
     def serialize(self):
@@ -117,8 +117,12 @@ class Course(db.Model):
             "imagen" : self.imagen,
             "time" : self.time,
             "description" : self.description,
-            "price" : self.price
+            "price" : self.price,
+            
         }
+
+
+
 
 
 class Compras(db.Model):   
