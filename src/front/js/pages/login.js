@@ -54,7 +54,7 @@ export const Login = () => {
       className="d-flex flex-column min-vh-100 justify-content-center align-items-center"
       id="template-bg-3"
     >
-      <div className="card mb-5 p-5 bg-dark bg-gradient text-white col-md-4">
+      <div className="cardLogin mb-5 p-5 bg-dark bg-gradient text-white col-md-4">
         <div className="card-header text-center">
           <h3>Iniciar sesión </h3>
         </div>
@@ -90,10 +90,7 @@ export const Login = () => {
               </small>
             </div>
             <div className="text-center">
-              <button
-                // onClick={handleClick}
-                className="btn btn-primary mt-3 w-100 p-2"
-              >
+              <button className="btn btn-primary mt-3 w-100 p-2">
                 Acceder
               </button>
             </div>

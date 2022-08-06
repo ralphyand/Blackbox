@@ -32,7 +32,7 @@ export const User_register = () => {
         return resp.json();
       })
       .then((data) => {
-        navigate("/");
+        navigate("/login");
         console.log(data);
       })
       .catch((error) => {
