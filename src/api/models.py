@@ -18,10 +18,13 @@ class User(db.Model):
     def serialize(self):
         return {
             "id": self.id,
-            "description": self.description,
+            "email": self.email,
             "name": self.name,
-        }
+            "lastname " : self.lastname,
+            "is_admin": self.is_admin
 
+        }
+  
 #tabla de cursos 
 class Category(db.Model): 
      id = db.Column(db.Integer, primary_key=True)
@@ -36,6 +39,7 @@ class Category(db.Model):
             "id": self.id,
             "name": self.name,  
         }
+
 #tabla para definir cuantas compras se han realizado 
 
 class Teacher(db.Model): 
@@ -58,6 +62,16 @@ class Temario(db.Model):
     description = db.Column(db.String(250), nullable=False)
 
 
+    def __repr__(self):
+        return f'<Temario {self.name}>'
+
+    def serialize(self):
+        return {
+            "id": self.id,
+            "name": self.name,
+            "description": self.description,   
+        }
+
 
 class Video(db.Model):   
     id = db.Column(db.Integer, primary_key=True) 
@@ -66,6 +80,15 @@ class Video(db.Model):
     temario_id = db.Column(db.Integer, db.ForeignKey('temario.id'),nullable=False)
     temario = db.relationship('Temario', backref='video', lazy=True,cascade = "all,delete")
 
+    def __repr__(self):
+        return f'<Video {self.name}>'
+
+    def serialize(self):
+        return {
+            "id": self.id,
+            "name": self.name,
+            "description": self.description,   
+        }
 
 
 class Course(db.Model):
@@ -82,8 +105,24 @@ class Course(db.Model):
     category = db.relationship('Category', backref='course', lazy=True,cascade = "all,delete")
     temario_id = db.Column(db.Integer, db.ForeignKey('temario.id'),nullable=False)
     temario = db.relationship('Temario', backref='course', lazy=True,cascade = "all,delete")
+   
     def __repr__(self):
-        return f'<Courses {self.name}>'
+        return f'<Course {self.name}>'
+
+
+    def serialize(self):
+        return {
+            "id": self.id,
+            "name": self.name,
+            "imagen" : self.imagen,
+            "time" : self.time,
+            "description" : self.description,
+            "price" : self.price,
+            "teacher" : self.teacher.serialize()
+        }
+
+
+
 
 
 class Compras(db.Model):   
@@ -94,3 +133,15 @@ class Compras(db.Model):
     user = db.relationship('User', backref='compras', lazy=True,cascade = "all,delete")
     price = db.Column(db.Float)
     date = db.Column(db.DateTime,default=datetime.datetime.utcnow)
+    
+
+    def __repr__(self):
+        return f'<Compras {self.id}>'
+
+    
+    def serialize(self):
+        return {
+            "id": self.id,
+    
+            "date" : self.date,
+        }

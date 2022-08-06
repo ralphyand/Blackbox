@@ -2,7 +2,7 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User
+from api.models import db, User ,Course, Teacher, Compras ,Temario, Video,Category
 from api.utils import generate_sitemap, APIException
 
 api = Blueprint('api', __name__)
@@ -16,3 +16,81 @@ def handle_hello():
     }
 
     return jsonify(response_body), 200
+
+@api.route('/course', methods=['GET'])
+def get_cursos() :
+        cursos = Course.query.all()
+        data = []
+        for course in cursos:
+            data.append(course.serialize()) 
+    
+        return jsonify(data),200
+
+
+@api.route('/course/<int:id>', methods=['GET'])
+def course_detail(id) :
+    course = Course.query.get(id)
+    return jsonify(course.serialize()),200
+
+
+
+   
+
+@api.route('/user', methods=['GET'])
+def get_users() :
+        users = User.query.all()
+        data = []
+        for user in users:
+            data.append(user.serialize())
+
+        return jsonify(data),200
+
+
+@api.route('/teacher', methods=['GET'])
+def get_teachers() :
+       teachers = Teacher.query.all()
+       data = []
+       for teacher in teachers:
+           data.append(teacher.serialize())
+
+       return jsonify(data),200
+
+
+
+@api.route('/temario', methods=['GET'])
+def get_temarios() :
+        temarios = Temario.query.all()
+        data = []
+        for temario in temarios:
+            data.append(temario.serialize())
+
+        return jsonify(data),200
+
+
+@api.route('/video', methods=['GET'])
+def get_videos() :
+        videos = Video.query.all()
+        data = []
+        for video in videos:
+            data.append(video.serialize())
+
+        return jsonify(data),200
+
+@api.route('/category', methods=['GET'])
+def get_categorias() :
+        categorias = Category.query.all()
+        data = []
+        for category in categorias:
+            data.append(category.serialize())
+
+        return jsonify(data),200
+
+
+@api.route('/compra', methods=['GET'])
+def get_comprados() :
+        comprados = Compras.query.all()
+        data = []
+        for compras in comprados:
+            data.append(compras.serialize())
+
+        return jsonify(data),200
