@@ -1,6 +1,8 @@
 import React, { useContext, useState } from "react";
 import Card from "../component/card";
 import { Context } from "../store/appContext";
+import { useParams } from "react-router-dom";
+
 import "../../styles/login.css";
 
 export const Cursos = (props) => {
@@ -13,6 +15,7 @@ export const Cursos = (props) => {
             {store.course.map((course) => {
               return (
                 <Card
+                  id={course.id}
                   price={course.price}
                   name={course.name}
                   description={course.description}

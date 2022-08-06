@@ -118,7 +118,7 @@ class Course(db.Model):
             "time" : self.time,
             "description" : self.description,
             "price" : self.price,
-            
+            "teacher" : self.teacher.serialize()
         }
 
 
