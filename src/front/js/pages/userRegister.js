@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "../../styles/user_register.css";
-
-const url =
-  "https://3001-ralphyand-blackbox-gnhp4r7upse.ws-eu54.gitpod.io/api/user/";
 
 export const User_register = () => {
   const [data, setData] = useState({});
+  const navigate = useNavigate();
 
   const handleChange = (event) => {
     // console.log(event.target.value);
@@ -20,7 +18,7 @@ export const User_register = () => {
   };
 
   const createUser = (data) => {
-    fetch(url, {
+    fetch(process.env.BACKEND_URL + "/api/user", {
       method: "POST",
       body: JSON.stringify(data),
       headers: {
@@ -34,6 +32,7 @@ export const User_register = () => {
         return resp.json();
       })
       .then((data) => {
+        navigate("/");
         console.log(data);
       })
       .catch((error) => {

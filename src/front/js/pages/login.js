@@ -41,18 +41,16 @@ export const Login = () => {
   const loginSubmit = (e) => {
     e.preventDefault();
     handleValidation();
+    if (actions.login(email, password)) {
+      navigate("/");
+    }
   };
 
-  const handleClick = () => {
-    if (actions.login(email, password));
-  };
-
-  if (store.token && store.token != "" && store.token != undefined)
-    navigate.push("/");
+  // if (store.token && store.token != "" && store.token != undefined)
+  //   navigate.push("/");
 
   return (
     <div
-      // id="login1"
       className="d-flex flex-column min-vh-100 justify-content-center align-items-center"
       id="template-bg-3"
     >
@@ -93,7 +91,7 @@ export const Login = () => {
             </div>
             <div className="text-center">
               <button
-                onClick={handleClick}
+                // onClick={handleClick}
                 className="btn btn-primary mt-3 w-100 p-2"
               >
                 Acceder

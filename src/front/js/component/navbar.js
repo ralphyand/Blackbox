@@ -1,8 +1,16 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import logotipo from "../../img/logotipo.jpg";
+import { Context } from "../store/appContext";
 
 export const Navbar = () => {
+  const { actions, store } = useContext(Context);
+  const navigate = useNavigate();
+  const logout = () => {
+    actions.logout();
+    navigate("/");
+  };
+
   return (
     <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
       <div className="container-fluid col-12 mb-3 text-center">
@@ -25,26 +33,37 @@ export const Navbar = () => {
                   Cursos
                 </a>
               </li>
-              <li className="nav-item ">
-                <Link to={`/user_register`} className="nav-link " href="#">
-                  Crear cuenta
-                </Link>
-              </li>
+              {!store.token ? (
+                <li className="nav-item ">
+                  <Link to={`/user_register`} className="nav-link " href="#">
+                    Crear cuenta
+                  </Link>
+                </li>
+              ) : (
+                ""
+              )}
             </ul>
           </div>
         </div>
-
         <div className="row">
           <form className="d-flex" role="search">
-            <Link to="/Login">
-              <button
-                to="/Loguin"
-                className="btn btn-outline-success "
-                type="submit"
-              >
+            {!store.token ? (
+              <Link to="/Login" className="btn btn-outline-success">
                 Entrar
-              </button>
-            </Link>
+              </Link>
+            ) : (
+              <div>
+                <div className="text-light">
+                  {store.name}
+                  <button
+                    className="btn btn-outline-success mx-2"
+                    onClick={logout}
+                  >
+                    Log out
+                  </button>
+                </div>
+              </div>
+            )}
           </form>
         </div>
       </div>

@@ -15,11 +15,55 @@ const getState = ({ getStore, getActions, setStore }) => {
         },
       ],
       token: null,
+      name: null,
     },
     actions: {
       // Use getActions to call a function within a fuction
       exampleFunction: () => {
         getActions().changeColor(0, "green");
+      },
+
+      login: async (email, password) => {
+        const resp = await fetch(process.env.BACKEND_URL + "/api/login", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            // 'Authorization': 'Bearer ' + getStore().token,
+            // 'Authorization': 'Bearer ' + localStorage.getItem("jwt-token")
+            // enviamos el token al backend (usamos una de las dos opciones)
+          },
+          body: JSON.stringify({ email: email, password: password }),
+        });
+
+        if (!resp.ok) throw Error("There was a problem in the login request");
+
+        if (resp.status === 401) {
+          throw "Invalid credentials";
+        } else if (resp.status === 400) {
+          throw "Invalid email or password format";
+        }
+        const data = await resp.json();
+        // save your token in the localStorage
+        //also you should set your user into the store using the setStore function
+        localStorage.setItem("jwt-token", data.token); // guardar sesión en el disco duro(token y nombre del user)
+        setStore({ token: data.token });
+        localStorage.setItem("name", data.name); // guardar sesión en el disco duro
+        setStore({ name: data.name });
+
+        return true;
+      },
+
+      setToken: (token, name) => {
+        setStore({ token: token });
+        setStore({ name: name });
+      },
+
+      logout: () => {
+        // borramos usuario y token del Store y de localStorage al cerrar la sesión
+        setStore({ token: null });
+        setStore({ name: null });
+        localStorage.removeItem("jwt-token");
+        localStorage.removeItem("name");
       },
 
       getMessage: async () => {
@@ -47,33 +91,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 
         //reset the global store
         setStore({ demo: demo });
-      },
-      login: async (email, password) => {
-        const resp = await fetch(process.env.BACKEND_URL + "/api/login", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            // 'Authorization': 'Bearer ' + getStore().token,
-            // 'Authorization': 'Bearer ' + localStorage.getItem("jwt-token")
-            // enviamos el token al backend(usamos una de las dos opciones)
-          },
-          body: JSON.stringify({ email: email, password: password }),
-        });
-
-        if (!resp.ok) throw Error("There was a problem in the login request");
-
-        if (resp.status === 401) {
-          throw "Invalid credentials";
-        } else if (resp.status === 400) {
-          throw "Invalid email or password format";
-        }
-        const data = await resp.json();
-        // save your token in the localStorage
-        //also you should set your user into the store using the setStore function
-        localStorage.setItem("jwt-token", data.token); // guardar sesión en el disco duro
-        setStore({ token: data.token });
-
-        return true;
       },
     },
   };

@@ -35,9 +35,9 @@ def login():
         return jsonify({"message": "Email o contraseña incorrectos"}), 401
     access_token = create_access_token(identity=user.id)  # Creamos token con id del usuario
 
-    return jsonify({"token": access_token}), 200
+    return jsonify({"token": access_token, "name": user.name}), 200
 
-@api.route('/user', methods=['GET'])  # Buscamos usuario por id
+@api.route('/user', methods=['GET'])
 @jwt_required() # Restringimos acceso a la API
 def get_user():
     user_id = get_jwt_identity()
