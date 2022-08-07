@@ -29,13 +29,13 @@ export const Navbar = () => {
           <div className="collapse navbar-collapse" id="navbarCollapse">
             <ul className="navbar-nav me-auto mb-2 mb-md-0">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">
+                <Link to="/cursos" className="nav-link active">
                   Cursos
-                </a>
+                </Link>
               </li>
               {!store.token ? (
                 <li className="nav-item ">
-                  <Link to={`/user_register`} className="nav-link " href="#">
+                  <Link to={`/user_register`} className="nav-link">
                     Crear cuenta
                   </Link>
                 </li>
