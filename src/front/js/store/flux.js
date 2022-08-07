@@ -16,9 +16,17 @@ const getState = ({ getStore, getActions, setStore }) => {
       ],
       token: null,
       name: null,
+      course: [],
     },
     actions: {
       // Use getActions to call a function within a fuction
+      getCourse: () => {
+        fetch(
+          "https://3001-ralphyand-blackbox-3knvdqr5faq.ws-eu54.gitpod.io/api/course"
+        )
+          .then((data) => data.json())
+          .then((data) => setStore({ course: data }));
+      },
       exampleFunction: () => {
         getActions().changeColor(0, "green");
       },
