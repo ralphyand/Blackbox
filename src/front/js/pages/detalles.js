@@ -20,7 +20,8 @@ export const Detalles = () => {
         <h1 className="">{detalles.name}</h1>
         <p className="card-text">{detalles.description}</p>
         <small className="text-muted">{detalles.price}€</small>
-        <small className="text-muted">{detalles.teacher.name}</small>
+        <small className="text-muted"> Profesor: {detalles.teacher.name}</small>
+        <small className="text-muted"> duracion {detalles.time}</small>
       </div>
     </div>
   ) : (

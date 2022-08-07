@@ -96,7 +96,7 @@ class Course(db.Model):
     name = db.Column(db.String(120), unique=True, nullable=False)
     description = db.Column(db.String(250), nullable=False)
     imagen = db.Column(db.String(250))
-    time = db.Column(db.Integer)
+    time = db.Column(db.String(250))
     price = db.Column(db.Float)
     codigodepago_id = db.Column(db.String(120))
     teacher_id = db.Column(db.Integer, db.ForeignKey('teacher.id'),nullable=False)
