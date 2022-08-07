@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import logotipo from "../../img/logotipo.jpg";
+import logotipo from "../../img/logotipo.png";
 import { Context } from "../store/appContext";
 
 export const Navbar = () => {
@@ -12,17 +12,11 @@ export const Navbar = () => {
   };
 
   return (
-    <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-      <div className="container-fluid col-12 mb-3 text-center">
+    <nav className="navbar navbar-expand-md navbar-dark bg-dark ">
+      <div className="container-fluid col-11 mb-3 text-center">
         <div className="row">
           <a href="/">
-            <img
-              src={logotipo}
-              alt="Bootstrap"
-              width="100"
-              height="100"
-              className="rounded-circle"
-            />
+            <img src={logotipo} alt="Bootstrap" width="80" height="40" />
           </a>
         </div>
         <div className="row">
@@ -48,8 +42,8 @@ export const Navbar = () => {
         <div className="row">
           <form className="d-flex" role="search">
             {!store.token ? (
-              <Link to="/Login" className="btn btn-outline-success">
-                Entrar
+              <Link to="/Login" className="btn btn-outline-light">
+                <i className="fas fa-user-circle" to="/Loguin"></i>
               </Link>
             ) : (
               <div>

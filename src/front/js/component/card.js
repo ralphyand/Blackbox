@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 export const Card = (props) => (
   <div className="col">
@@ -10,11 +11,16 @@ export const Card = (props) => (
         <p className="card-text">{props.description}</p>
         <div className="d-flex justify-content-between align-items-center">
           <div className="btn-group">
-            <button type="button" className="btn btn-sm btn-outline-secondary">
-              Detalles
-            </button>
+            <Link to={`/detalles/${props.id}`}>
+              <button
+                type="button"
+                className="btn btn-sm btn-outline-secondary"
+              >
+                Detalles
+              </button>
+            </Link>
           </div>
-          <small className="text-muted">{props.time}</small>
+          <small className="text-muted">{props.price}€</small>
         </div>
       </div>
     </div>
@@ -26,7 +32,7 @@ Card.propTypes = {
   name: PropTypes.string,
   description: PropTypes.string,
   imagen: PropTypes.string,
-  time: PropTypes.string,
+  price: PropTypes.string,
 };
 
 export default Card;
