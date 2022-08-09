@@ -29,7 +29,7 @@ export const Navbar = () => {
               </li>
               {!store.token ? (
                 <li className="nav-item ">
-                  <Link to={`/user_register`} className="nav-link">
+                  <Link to={`/user_register`} className="nav-link active">
                     Crear cuenta
                   </Link>
                 </li>
@@ -47,13 +47,13 @@ export const Navbar = () => {
               </Link>
             ) : (
               <div>
-                <div className="text-light">
+                <div className="text-light ">
                   {store.name}
                   <button
-                    className="btn btn-outline-success mx-2"
+                    className="btn btn-outline-light mx-2 "
                     onClick={logout}
                   >
-                    Log out
+                    <i class="fas fa-sign-out-alt"></i>
                   </button>
                 </div>
               </div>
@@ -64,3 +64,5 @@ export const Navbar = () => {
     </nav>
   );
 };
+
+//<FontAwesomeIcon icon="fa-solid fa-right-from-bracket" />
