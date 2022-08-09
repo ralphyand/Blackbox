@@ -8,14 +8,6 @@ from flask_jwt_extended import create_access_token, get_jwt_identity, jwt_requir
 
 api = Blueprint('api', __name__)
 
-
-@api.route('/users', methods=['GET'])
-def get_users():
-    users = User.query.all()
-    data = [user.serialize() for user in users]
-
-    return jsonify(data), 200
-
 @api.route('/user', methods=['POST'])
 def create_user():
     data = request.json
