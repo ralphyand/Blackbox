@@ -1,14 +1,24 @@
 import React, { useContext, useState } from "react";
-import Carousel, { Payment } from "../component/payment";
+import Payment from "../component/payment";
+import { loadStripe } from "@stripe/stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
+import "../../styles/pagos.css";
+import { useParams } from "react-router-dom";
+
+const stripePromise = loadStripe(
+  "pk_test_51LVGdOAWxURsmnxVuEmgDElOR88YSms9d8199nDEul665RQ2fzoczeCEp92YkusblX4BPJRBLkJLXcZmBPKQZt0000IkeUv2qX"
+);
 
 export const Pagos = () => {
+  const params = useParams();
   return (
     <>
-      <div className="carousel text-center">
+      <div id="trajetadePago" className="carousel text-center col-10 p-5">
         <div className="container">
           <div className="col">
-            <h1>hola mundo </h1>
-            <Payment />
+            <Elements stripe={stripePromise}>
+              <Payment idStripe={params.idStripe} />
+            </Elements>
           </div>
         </div>
       </div>

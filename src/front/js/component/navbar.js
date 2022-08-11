@@ -53,7 +53,7 @@ export const Navbar = () => {
                     className="btn btn-outline-light mx-2 "
                     onClick={logout}
                   >
-                    <i class="fas fa-sign-out-alt"></i>
+                    <i className="fas fa-sign-out-alt"></i>
                   </button>
                 </div>
               </div>

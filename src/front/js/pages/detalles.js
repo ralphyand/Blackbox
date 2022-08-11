@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "../../styles/detalles.css";
 import { loadStripe } from "@stripe/stripe-js";
 
@@ -40,11 +40,12 @@ export const Detalles = () => {
               Profesor: {detalles.teacher.name}
             </small>
           </li>
-          <a href="/pagos" className="btn btn-dark rounded-pill">
-            <button type="button" class="btn btn-dark">
-              Comprar
-            </button>
-          </a>
+          <Link
+            to={`/pagos/${detalles.codigodepago_id}`}
+            className="btn btn-dark rounded-pill"
+          >
+            Comprar
+          </Link>
         </ul>
       </div>
     </div>

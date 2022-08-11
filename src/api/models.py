@@ -118,6 +118,7 @@ class Course(db.Model):
             "time" : self.time,
             "description" : self.description,
             "price" : self.price,
+            "codigodepago_id": self.codigodepago_id,
             "teacher" : self.teacher.serialize()
         }
 
