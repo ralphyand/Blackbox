@@ -8,7 +8,7 @@ import "../../styles/home.css";
 
 export const Home = () => {
   const { store, actions } = useContext(Context);
-
+  const courseFiltrados = store.course.filter((curso) => curso.price < 10);
   return (
     <>
       <div className="carousel text-center">
@@ -17,10 +17,11 @@ export const Home = () => {
           <div className="col">
             <div className="album py-3 bg-light">
               <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                {store.course.map((course) => {
+                {courseFiltrados.map((course) => {
                   return (
                     <Card
-                      time={course.time}
+                      id={course.id}
+                      price={course.price}
                       name={course.name}
                       description={course.description}
                       imagen={course.imagen}
@@ -28,7 +29,6 @@ export const Home = () => {
                   );
                 })}
               </div>
-              n
             </div>
           </div>
         </div>

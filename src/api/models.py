@@ -96,7 +96,7 @@ class Course(db.Model):
     name = db.Column(db.String(120), unique=True, nullable=False)
     description = db.Column(db.String(250), nullable=False)
     imagen = db.Column(db.String(250))
-    time = db.Column(db.Integer)
+    time = db.Column(db.String(250))
     price = db.Column(db.Float)
     codigodepago_id = db.Column(db.String(120))
     teacher_id = db.Column(db.Integer, db.ForeignKey('teacher.id'),nullable=False)
@@ -107,7 +107,7 @@ class Course(db.Model):
     temario = db.relationship('Temario', backref='course', lazy=True,cascade = "all,delete")
    
     def __repr__(self):
-        return f'<Courses {self.name}>'
+        return f'<Course {self.name}>'
 
 
     def serialize(self):
@@ -117,7 +117,12 @@ class Course(db.Model):
             "imagen" : self.imagen,
             "time" : self.time,
             "description" : self.description,
+            "price" : self.price,
+            "teacher" : self.teacher.serialize()
         }
+
+
+
 
 
 class Compras(db.Model):   
@@ -128,6 +133,7 @@ class Compras(db.Model):
     user = db.relationship('User', backref='compras', lazy=True,cascade = "all,delete")
     price = db.Column(db.Float)
     date = db.Column(db.DateTime,default=datetime.datetime.utcnow)
+    
 
     def __repr__(self):
         return f'<Compras {self.id}>'

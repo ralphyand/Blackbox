@@ -45,6 +45,15 @@ def get_cursos() :
             data.append(course.serialize()) 
     
         return jsonify(data),200
+
+
+@api.route('/course/<int:id>', methods=['GET'])
+def course_detail(id) :
+    course = Course.query.get(id)
+    return jsonify(course.serialize()),200
+
+
+
    
 
 @api.route('/user', methods=['GET'])
