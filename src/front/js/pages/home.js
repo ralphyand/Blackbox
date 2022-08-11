@@ -3,7 +3,7 @@ import { Context } from "../store/appContext";
 import Carousel from "../component/carousel";
 import Card from "../component/card";
 import Course from "../component/course";
-
+//import Payment from "../component/payment";
 import "../../styles/home.css";
 
 export const Home = () => {

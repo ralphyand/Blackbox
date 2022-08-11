@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "../../styles/detalles.css";
+import { loadStripe } from "@stripe/stripe-js";
 
 export const Detalles = () => {
   const [detalles, setDetalles] = useState();
@@ -21,7 +22,7 @@ export const Detalles = () => {
         </div>
         <div class="right">
           <div class="author ">
-            <h2 id="nombreprofesor"> {detalles.name}</h2>
+            <h2 id="nombredelcurso"> {detalles.name}</h2>
           </div>
           <div class="separator"></div>
           <p id="descripciondelcurso">{detalles.description}</p>
@@ -35,13 +36,15 @@ export const Detalles = () => {
             <i class="fas fa-hourglass-half"> tiempo {detalles.time} </i>
           </li>
           <li>
-            <small classNameName="text-muted">
+            <small className="text-muted">
               Profesor: {detalles.teacher.name}
             </small>
           </li>
-          <button type="button" class="btn btn-dark">
-            Comprar
-          </button>
+          <a href="/pagos" className="btn btn-dark rounded-pill">
+            <button type="button" class="btn btn-dark">
+              Comprar
+            </button>
+          </a>
         </ul>
       </div>
     </div>
