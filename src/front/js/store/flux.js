@@ -17,16 +17,32 @@ const getState = ({ getStore, getActions, setStore }) => {
       token: null,
       name: null,
       course: [],
+      video: [],
     },
     actions: {
       // Use getActions to call a function within a fuction
 
-      // //getCourse: () => {
-      //   fetch(process.env.BACKEND_URL + "/api/course")
-      //     .then((data) => data.json())
-      //     .then((data) => setStore({ course: data }));
-      //   //
-      //},
+      getVideo: async () => {
+        try {
+          const resp = await fetch(process.env.BACKEND_URL + "/api/video", {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+            },
+          });
+          const data = await resp.json();
+          setStore({
+            video: data,
+          });
+          console.log(data);
+          return data;
+        } catch (error) {
+          console.log("Error loading message from backend", error);
+        }
+      },
+      exampleFunction: () => {
+        getActions().changeColor(0, "green");
+      },
 
       getCourse: async () => {
         try {

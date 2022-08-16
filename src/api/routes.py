@@ -155,3 +155,6 @@ def get_private_course():
     compras = Compras.query.filter_by(user_id=user_id)
     course = [compra.course.serialize() for compra in compras]
     return jsonify(course), 200
+
+
+

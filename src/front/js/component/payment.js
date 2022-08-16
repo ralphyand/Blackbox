@@ -9,6 +9,7 @@ export default function Payment(props) {
   const [clientSecret, setClientSecret] = useState("");
   const stripe = useStripe();
   const elements = useElements();
+  const [email, setEmail] = useState("");
 
   useEffect(() => {
     // Create PaymentIntent as soon as the page loads
@@ -61,6 +62,7 @@ export default function Payment(props) {
     setProcessing(true);
 
     const payload = await stripe.confirmCardPayment(clientSecret, {
+      receipt_email: email,
       payment_method: {
         card: elements.getElement(CardElement),
       },
@@ -80,6 +82,12 @@ export default function Payment(props) {
 
   return (
     <form id="payment-form" onSubmit={handleSubmit}>
+      <input
+        type="text"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        placeholder="Enter email address"
+      />
       <CardElement
         id="card-element"
         options={cardStyle}

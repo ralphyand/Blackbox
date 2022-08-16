@@ -12,16 +12,17 @@ const stripePromise = loadStripe(
 export const Pagos = () => {
   const params = useParams();
   return (
-    <>
-      <div id="trajetadePago" className="carousel text-center col-10 p-5">
-        <div className="container">
-          <div className="col">
-            <Elements stripe={stripePromise}>
-              <Payment idStripe={params.idStripe} />
-            </Elements>
-          </div>
-        </div>
-      </div>
-    </>
+    <div id="trajetadePago" className=" text-center ">
+      <Elements stripe={stripePromise}>
+        <Payment idStripe={params.idStripe} />
+      </Elements>
+    </div>
   );
 };
+
+/*<div id="trajetadePago" className=" text-center ">
+                <Elements stripe={stripePromise}>
+                  <Payment idStripe={params.idStripe} />
+                </Elements>
+              </div>
+            </div> */

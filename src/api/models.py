@@ -70,6 +70,7 @@ class Temario(db.Model):
             "id": self.id,
             "name": self.name,
             "description": self.description,   
+            "videos": [video.serialize() for video in self.video]
         }
 
 
@@ -81,13 +82,14 @@ class Video(db.Model):
     temario = db.relationship('Temario', backref='video', lazy=True,cascade = "all,delete")
 
     def __repr__(self):
-        return f'<Video {self.name}>'
+        return f'<Video {self.id}>'
 
     def serialize(self):
         return {
             "id": self.id,
             "name": self.name,
             "description": self.description,   
+            
         }
 
 
@@ -119,7 +121,8 @@ class Course(db.Model):
             "description" : self.description,
             "price" : self.price,
             "codigodepago_id": self.codigodepago_id,
-            "teacher" : self.teacher.serialize()
+            "teacher" : self.teacher.serialize(),
+            "temario" : self.temario.serialize()
         }
 
 

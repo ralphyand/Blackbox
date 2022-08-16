@@ -46,6 +46,12 @@ export const Detalles = () => {
           >
             Comprar
           </Link>
+          <Link
+            to={`/Start_course/${detalles.id}`}
+            className="  btn btn-dark rounded-pill"
+          >
+            curso
+          </Link>
         </ul>
       </div>
     </div>
