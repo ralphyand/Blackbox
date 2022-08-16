@@ -20,7 +20,7 @@ export const Card = (props) => (
               </button>
             </Link>
           </div>
-          <small className="text-muted">{props.price}€</small>
+          <small className="text-muted">{props.price } €</small>
         </div>
       </div>
     </div>

@@ -46,7 +46,12 @@ export const Navbar = () => {
                 <i className="fas fa-user-circle" to="/Loguin"></i>
               </Link>
             ) : (
+
+
               <div>
+                <div className="row">
+                <ul className="navbar-nav me-auto mb-2 mb-md-0">
+               
                 <div className="text-light ">
                   {store.name}
                   <button
@@ -55,8 +60,17 @@ export const Navbar = () => {
                   >
                     <i className="fas fa-sign-out-alt"></i>
                   </button>
+                  
+                  
+                  <Link to={`/my_course`} className="nav-link active">
+                    mis cursos
+                  </Link>
+              
+                  </div>
+                  </ul>
                 </div>
-              </div>
+                </div>
+               
             )}
           </form>
         </div>

@@ -30,7 +30,7 @@ export const Detalles = () => {
 
         <ul id="iconosdedetalles">
           <li>
-            <i class="fas fa-euro-sign"> valor {detalles.price} </i>
+            <i class="fas fa-euro-sign">  {detalles.price} </i>
           </li>
           <li>
             <i class="fas fa-hourglass-half"> tiempo {detalles.time} </i>
@@ -46,6 +46,7 @@ export const Detalles = () => {
           >
             Comprar
           </Link>
+
           <Link
             to={`/Start_course/${detalles.id}`}
             className="  btn btn-dark rounded-pill"
@@ -56,7 +57,7 @@ export const Detalles = () => {
       </div>
     </div>
   ) : (
-    <h1>este curso no esta disponible </h1>
+    <h1 >este curso no esta disponible </h1>
   );
 };
 

@@ -11,12 +11,14 @@ import { Single } from "./pages/single";
 import injectContext from "./store/appContext";
 import { Detalles } from "./pages/detalles";
 
+
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import { Login } from "./pages/login";
 import { Cursos } from "./pages/cursos";
 import { User_register } from "./pages/userRegister";
 import { User_profile } from "./pages/userProfile";
+import { My_course } from "./pages/my_course";
 
 //create your first component
 const Layout = () => {
@@ -36,6 +38,7 @@ const Layout = () => {
             <Route element={<User_register />} path="/user_register" />
             <Route element={<Login />} path="/login" />
             <Route element={<Cursos />} path="/cursos" />
+            <Route element={<My_course/>} path="/my_course" />
             <Route element={<Demo />} path="/demo" />
             <Route element={<Pagos />} path="/pagos/:idStripe" />
             <Route element={<Single />} path="/single/:theid" />
