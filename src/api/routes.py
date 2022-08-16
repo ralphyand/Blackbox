@@ -13,9 +13,6 @@ stripe.api_key = "sk_test_51LVGdOAWxURsmnxVwoStl969rbcwiP1kGosBvclfsES9CTedRu0rX
 
 api = Blueprint('api', __name__)
 
-
-
-
 @api.route('/user', methods=['POST'])
 def create_user():
     data = request.json
