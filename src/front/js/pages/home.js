@@ -7,6 +7,7 @@ import logotipo from "../../img/logotipo.png";
 //import Payment from "../component/payment";
 import "../../styles/home.css";
 
+
 export const Home = () => {
   const { store, actions } = useContext(Context);
   const courseFiltrados = store.course.filter((curso) => curso.price < 10);
@@ -37,31 +38,24 @@ export const Home = () => {
             <div class="row featurette">
               <div class="col-md-7">
                 <h2 class="featurette-heading fw-normal lh-1">
-                  First featurette heading.{" "}
-                  <span class="text-muted">It’ll blow your mind.</span>
+                  And lastly, this one.{" "}
+                  <span class="text-muted">Checkmate.</span>
                 </h2>
                 <p class="lead">
-                  Some great placeholder content for the first featurette here.
-                  Imagine some exciting prose here.
+                  And yes, this is the last block of representative placeholder
+                  content. Again, not really intended to be actually read,
+                  simply here to give you a better view of what this would look
+                  like with some actual content. Your content.
                 </p>
               </div>
               <div class="col-md-5">
-                <svg
-                  class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
-                  width="500"
-                  height="500"
-                  xmlns="http://www.w3.org/2000/svg"
-                  role="img"
-                  aria-label="Placeholder: 500x500"
-                  preserveAspectRatio="xMidYMid slice"
-                  focusable="false"
-                >
-                  <title>Placeholder</title>
-                  <rect width="100%" height="100%" fill="#eee" />
-                  <text x="50%" y="50%" fill="#aaa" dy=".3em">
-                    500x500
-                  </text>
-                </svg>
+                <div class="card text-bg-dark">
+                  <img
+                    src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80"
+                    class="card-img"
+                    alt="..."
+                  />
+                </div>
               </div>
             </div>
 

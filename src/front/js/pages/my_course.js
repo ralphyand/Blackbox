@@ -1,8 +1,10 @@
 
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
+import "../../styles/my_course.css";
 
-import Card from "../component/card";
+
+import card_private, { Card_private } from "../component/card_private";
 
 
 //import Payment from "../component/payment";
@@ -25,16 +27,37 @@ export const My_course = () => {
     }, []);
   
     return detalles.map((course,index)=>{
-        return <Card
+        return (
+          <>
+          <div className="row">
+       <div className="container text-center" >
+          <div className="col">
+            <div className="album py-3 ">
+              <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-">
+        
+        <Card_private
         id={course.id}
         price={course.price}
         name={course.name}
         description={course.description}
         imagen={course.imagen}
       />
-    }) 
+                     
+                </div>
+              </div>
+           </div>
+         </div>
+         </div>
+      </>
+    
+        ) 
+    } ) 
   };
 
-  
-  
-       
+  /* <Card_private
+        id={course.id}
+        price={course.price}
+        name={course.name}
+        description={course.description}
+        imagen={course.imagen}
+      /> */

@@ -20,7 +20,7 @@ export const Card = (props) => (
               </button>
             </Link>
           </div>
-          <small className="text-muted">{props.price } €</small>
+          <small className="text-muted">{props.price} €</small>
         </div>
       </div>
     </div>
@@ -32,7 +32,7 @@ Card.propTypes = {
   name: PropTypes.string,
   description: PropTypes.string,
   imagen: PropTypes.string,
-  price: PropTypes.string,
+  price: PropTypes.number,
   video: PropTypes.string,
 };
 

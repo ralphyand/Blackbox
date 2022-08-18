@@ -155,3 +155,13 @@ def get_private_course():
 
 
 
+@api.route('/compra', methods=['POST'])
+@jwt_required()
+def compra_user():
+    user_id = get_jwt_identity()
+    data = request.json
+    compra = Compras(user_id = user_id, price = data.get("price"), course_id = data.get("course_id") )
+    db.session.add(compra)
+    db.session.commit()
+
+    return jsonify({"message": "compra realizada"}), 200

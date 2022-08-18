@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
+import { useNavigate } from "react-router-dom";
 
 export default function Payment(props) {
   const [succeeded, setSucceeded] = useState(false);
@@ -10,8 +11,9 @@ export default function Payment(props) {
   const stripe = useStripe();
   const elements = useElements();
   const [email, setEmail] = useState("");
-
+  const navigate = useNavigate();
   useEffect(() => {
+    console.log(props);
     // Create PaymentIntent as soon as the page loads
     window
       .fetch(process.env.BACKEND_URL + "/api/create-payment-intent", {
@@ -77,6 +79,23 @@ export default function Payment(props) {
       setSucceeded(true);
       console.log(payload);
       // fecht para guardar la orden de compra
+      fetch(process.env.BACKEND_URL + "/api/compra", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + localStorage.getItem("jwt-token"),
+        },
+        body: JSON.stringify({
+          price: props.price,
+          course_id: props.id,
+        }),
+      })
+        .then((res) => {
+          return res.json();
+        })
+        .then((data) => {
+          navigate("/my_course");
+        });
     }
   };
 
