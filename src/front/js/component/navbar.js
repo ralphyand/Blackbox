@@ -14,14 +14,14 @@ export const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-md navbar-dark bg-dark ">
       <div className="container-fluid col-11 mb-3 text-center">
-        <div className="row">
+        <div className="">
           <a href="/">
             <img src={logotipo} alt="Bootstrap" width="80" height="40" />
           </a>
         </div>
-        <div className="row">
+        <div className="d-flex justify-content-between">
           <div className="collapse navbar-collapse" id="navbarCollapse">
-            <ul className="navbar-nav me-auto mb-2 mb-md-0">
+            <ul className="navbar-nav ">
               <li className="nav-item">
                 <Link to="/cursos" className="nav-link active">
                   Cursos
@@ -36,29 +36,34 @@ export const Navbar = () => {
               ) : (
                 ""
               )}
+
+              <form className="d-flex" role="search">
+                {!store.token ? (
+                  <Link to="/Login" className="btn btn-outline-light">
+                    <i className="fas fa-user-circle" to="/Loguin"></i>
+                  </Link>
+                ) : (
+                  <div className="text-light ">
+                    {store.name}
+                    <button
+                      className="btn btn-outline-light mx-2 "
+                      onClick={logout}
+                    >
+                      <i className="fas fa-sign-out-alt"></i>
+                    </button>
+
+                    <Link
+                      to={`/my_course`}
+                      className="nav-link active"
+                      id="NombredelUsuario"
+                    >
+                      mis cursos
+                    </Link>
+                  </div>
+                )}
+              </form>
             </ul>
           </div>
-        </div>
-        <div className="row">
-          <form className="d-flex" role="search">
-            {!store.token ? (
-              <Link to="/Login" className="btn btn-outline-light">
-                <i className="fas fa-user-circle" to="/Loguin"></i>
-              </Link>
-            ) : (
-              <div>
-                <div className="text-light ">
-                  {store.name}
-                  <button
-                    className="btn btn-outline-light mx-2 "
-                    onClick={logout}
-                  >
-                    <i class="fas fa-sign-out-alt"></i>
-                  </button>
-                </div>
-              </div>
-            )}
-          </form>
         </div>
       </div>
     </nav>

@@ -12,15 +12,15 @@ export const Card = (props) => (
         <div className="d-flex justify-content-between align-items-center">
           <div className="btn-group">
             <Link to={`/detalles/${props.id}`}>
-              <button
-                type="button"
-                className="btn btn-sm btn-outline-secondary"
-              >
-                Detalles
+              <button class="learn-more">
+                <span class="circle" aria-hidden="true">
+                  <span class="icon arrow"></span>
+                </span>
+                <span class="button-text">Leer mas</span>
               </button>
             </Link>
           </div>
-          <small className="text-muted">{props.price}€</small>
+          <small className="text-muted">{props.price} €</small>
         </div>
       </div>
     </div>
@@ -32,7 +32,12 @@ Card.propTypes = {
   name: PropTypes.string,
   description: PropTypes.string,
   imagen: PropTypes.string,
-  price: PropTypes.string,
+  price: PropTypes.number,
+  video: PropTypes.string,
 };
 
 export default Card;
+
+/*<button type="button" className="btn btn-dark rounded-pill">
+                Detalles
+              </button> */
