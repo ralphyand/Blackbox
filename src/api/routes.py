@@ -117,7 +117,7 @@ def get_comprados() :
         return jsonify(data),200
 
 
-<<<<<<< HEAD
+
 def calculate_order_amount(items):
     # Replace this constant with a calculation of the order's amount
     # Calculate the order total on the server to prevent
@@ -162,7 +162,7 @@ def compra_user():
     db.session.commit()
 
     return jsonify({"message": "compra realizada"}), 200
-=======
+
 @api.route('/user_profile', methods=['PUT'])
 @jwt_required()
 def editUser():
@@ -177,4 +177,4 @@ def editUser():
     db.session.commit()
 
     return jsonify({"message": "user_profile updated"}), 200
->>>>>>> main
+

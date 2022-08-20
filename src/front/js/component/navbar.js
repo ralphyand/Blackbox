@@ -65,30 +65,6 @@ export const Navbar = () => {
             </ul>
           </div>
         </div>
-<<<<<<< HEAD
-=======
-        <div className="row">
-          <form className="d-flex" role="search">
-            {!store.token ? (
-              <Link to="/Login" className="btn btn-outline-light">
-                <i className="fas fa-user-circle" to="/Loguin"></i>
-              </Link>
-            ) : (
-              <div>
-                <Link to="/user_profile" className="text-light ">
-                  {store.name}
-                  <button
-                    className="btn btn-outline-light mx-2 "
-                    onClick={logout}
-                  >
-                    <i className="fas fa-sign-out-alt"></i>
-                  </button>
-                </Link>
-              </div>
-            )}
-          </form>
-        </div>
->>>>>>> main
       </div>
     </nav>
   );
