@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 export const Footer = () => (
-  <footer className="navbar navbar-light bg-dark">
+  <footer className="navbar  bg-dark">
     <div className="container-fluid">
       <span className="navbar-text text-light">© Black Box 2022</span>
       <span className="footer-text text-light">
