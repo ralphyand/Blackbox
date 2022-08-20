@@ -7,7 +7,6 @@ import logotipo from "../../img/logotipo.png";
 //import Payment from "../component/payment";
 import "../../styles/home.css";
 
-
 export const Home = () => {
   const { store, actions } = useContext(Context);
   const courseFiltrados = store.course.filter((curso) => curso.price < 10);
