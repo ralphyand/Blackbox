@@ -1,37 +1,65 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { Context } from "../store/appContext";
 import "../../styles/userProfile.css";
 
 export const User_profile = () => {
-  const [info, setInfo] = useState({});
+  const [data, setData] = useState({});
+  const [user, setUser] = useState({});
+  const navigate = useNavigate();
+  const { store } = useContext(Context);
 
-  const handleChange = (event) => {
-    // console.log(event.target.value);
-    setInfo({ ...info, [event.target.name]: event.target.value });
-  };
-
-  const sendInfo = (event) => {
-    event.preventDefault();
-    // console.log(info);
-    changeInfo(info);
-  };
-
-  const changeInfo = (info) => {
-    fetch(process.env.BACKEND_URL + "/api/user_profile", {
+  useEffect(() => {
+    if (!localStorage.getItem("jwt-token")) {
+      navigate("/login");
+    }
+    //fetch consultar datos del user
+    fetch(process.env.BACKEND_URL + "/api/user", {
       method: "GET",
-      // body: JSON.stringify(info),
       headers: {
         "Content-Type": "application/json",
+        Authorization: "Bearer " + localStorage.getItem("jwt-token"),
       },
     })
       .then((resp) => {
-        if (!resp.ok)
-          //comprobamos si han habido errores
-          throw new Error("Usuario ya creado anteriormente"); //creamos un objeto de tipo Error
         return resp.json();
       })
-      .then((info) => {
-        navigate("/login");
-        console.log(info);
+      .then((data) => {
+        console.log(data);
+        setUser(data);
+        setData(data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  const handleChange = (event) => {
+    // console.log(event.target.value);
+    setData({ ...data, [event.target.name]: event.target.value });
+  };
+
+  const sendData = (event) => {
+    event.preventDefault();
+    // console.log(info);
+    changeInfo(data);
+  };
+
+  const changeInfo = (data) => {
+    fetch(process.env.BACKEND_URL + "/api/user_profile", {
+      method: "PUT",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + store.token,
+      },
+    })
+      .then((resp) => {
+        return resp.json();
+      })
+      .then((data) => {
+        navigate("/");
+        console.log(data);
       })
       .catch((error) => {
         console.log(error);
@@ -42,95 +70,57 @@ export const User_profile = () => {
     <div>
       <div className="container-fluid fondo">
         <div className="row justify-content-center">
-          <div className="col-md-3">
-            <div className="card my-5 py-3 px-4 usercard">
-              <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXU99EN1Ah3Z89I4s7BOp_rrPmzpi0O0nfyA&usqp=CAU"
-                className="card-img-top rounded-circle"
-                alt="..."
-              />
-              <div className="card-body">
-                <p className="card-title text-center fs-4 fw-bold">
-                  María Casas
-                </p>
-                <p className="text-center">maria@user.com</p>
-                <p className="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content. Some quick example text to
-                  build on the card title and make up the bulk of the card's
-                  content.
-                </p>
-                {/* <a href="#" className="btn btn-outline-primary">
-                    Editar perfil
-                  </a> */}
-              </div>
-            </div>
-          </div>
-          {/* F O R M U L A R I O */}
           <div className="col-md-5 usercard">
             <form
               className="row g-3 tabla my-5 py-3 px-5 rounded"
-              onSubmit={sendInfo}
+              onSubmit={sendData}
             >
               <h6 className="fs-5 text-center">Modificar mis datos</h6>
               <label>Nombre</label>
               <input
+                defaultValue={user.name}
                 type="name"
                 className="form-control mt-1"
                 id="nameInput"
-                // placeholder="Escribe el nombre"
+                name="name"
+                // placeholder={user.name}
                 onChange={handleChange}
               />
               <label>Apellido</label>
               <input
+                defaultValue={user.lastname}
                 type="lastname"
                 className="form-control mt-1"
                 id="lastnameInput"
-                // placeholder="Escribe el apellido"
+                name="lastname"
+                // placeholder={user.lastname}
                 onChange={handleChange}
               />
               <label>Email</label>
               <input
+                defaultValue={user.email}
                 type="email"
                 className="form-control mt-1"
                 id="EmailInput"
-                // placeholder="Correo electrónico"
+                name="email"
+                // placeholder={user.email}
                 onChange={handleChange}
               />
               <label>Contraseña nueva</label>
               <input
                 type="password"
                 className="form-control mt-1"
-                // placeholder="Escribe la contraseña nueva"
+                name="password"
                 onChange={handleChange}
               />
-              <label>Repitir contraseña</label>
+              <label>Repetir contraseña</label>
               <input
                 type="password"
                 className="form-control mt-1"
+                name="password"
                 // placeholder="Confirma la nueva contraseña"
                 onChange={handleChange}
               />
-              <div>
-                <label>Sobre ti</label>
-                <textarea
-                  className="form-control mt-1"
-                  id="exampleFormControlTextarea1"
-                  rows="3"
-                  placeholder="Escribe algo sobre ti"
-                  onChange={handleChange}
-                ></textarea>
-              </div>
-              <div className="input-group mb-2">
-                <input
-                  type="file"
-                  className="form-control"
-                  id="inputGroupFile02"
-                />
-                <label className="input-group-text" for="inputGroupFile02">
-                  Cambiar foto
-                </label>
-              </div>
               <div className="col-12 text-end">
                 <button type="submit" className="btn btn-outline-primary">
                   Guardar
@@ -143,21 +133,3 @@ export const User_profile = () => {
     </div>
   );
 };
-
-{
-  /* 
-    <div className="bgprofileimg d-flex flex-column min-vh-100 justify-content-center align-items-center">
-      <div className="imgfondo registro card mb-5 p-5 bg-dark bg-gradient text-white col-md-8">
-  <div className="row justify-content-around">
-<div className="col-5">
-  <p>Mi perfil</p>
-  <p>Notificaciones</p>
-  <p>Cerrar sesión</p>
-</div>
-<div className="col-5">
-  <p>Mis cursos</p>
-</div>
-</div>
-</div>
-</div> */
-}

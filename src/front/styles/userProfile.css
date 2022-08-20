@@ -5,11 +5,21 @@
 }
 .tabla {
   background: rgb(253, 254, 254);
+  transform: perspective(600px) rotateY(0deg);
 }
-/* img {
-  vertical-align: middle;
-  border-style: none;
-}*/
-.usercard {
+.usercard .front {
   opacity: 0.9;
+  transform: perspective(600px) rotateY(0deg);
+}
+.usercard .back {
+  transform: perspective(600px) rotateY(180deg);
+}
+.usercard:hover .front {
+  transform: perspective(600px) rotateY(180deg);
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+}
+
+.usercard:hover .back {
+  transform: perspective(600px) rotateY(360deg);
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
 }

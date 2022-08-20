@@ -53,9 +53,6 @@ def course_detail(id) :
     return jsonify(course.serialize()),200
 
 
-
-   
-
 @api.route('/user', methods=['GET'])
 def get_users() :
         users = User.query.all()
@@ -74,7 +71,6 @@ def get_teachers() :
            data.append(teacher.serialize())
 
        return jsonify(data),200
-
 
 
 @api.route('/temario', methods=['GET'])
@@ -114,3 +110,19 @@ def get_comprados() :
             data.append(compras.serialize())
 
         return jsonify(data),200
+
+
+@api.route('/user_profile', methods=['PUT'])
+@jwt_required()
+def editUser():
+    user_id = get_jwt_identity()
+    data = request.json
+    user = User.query.get(user_id)   
+    user.name = data.get("name")
+    user.lastname = data.get("lastname")
+    user.email = data.get("email")
+    user.password = data.get("password")
+
+    db.session.commit()
+
+    return jsonify({"message": "user_profile updated"}), 200
