@@ -24,7 +24,7 @@ export const Login = () => {
       formIsValid = true;
     }
 
-    if (!password.match(/^[a-zA-Z]{8,22}$/)) {
+    if (!password.match(/^[a-zA-Z]{8,12}$/)) {
       formIsValid = false;
       setpasswordError(
         "Solo las letras y la longitud deben tener un mínimo de 8 caracteres y un máximo de 22 caracteres"
@@ -45,9 +45,6 @@ export const Login = () => {
       navigate("/");
     }
   };
-
-  // if (store.token && store.token != "" && store.token != undefined)
-  //   navigate.push("/");
 
   return (
     <div

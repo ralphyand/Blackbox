@@ -58,9 +58,6 @@ def course_detail(id) :
     return jsonify(course.serialize()),200
 
 
-
-   
-
 @api.route('/user', methods=['GET'])
 def get_users() :
         users = User.query.all()
@@ -79,7 +76,6 @@ def get_teachers() :
            data.append(teacher.serialize())
 
        return jsonify(data),200
-
 
 
 @api.route('/temario', methods=['GET'])
@@ -121,6 +117,7 @@ def get_comprados() :
         return jsonify(data),200
 
 
+<<<<<<< HEAD
 def calculate_order_amount(items):
     # Replace this constant with a calculation of the order's amount
     # Calculate the order total on the server to prevent
@@ -165,3 +162,19 @@ def compra_user():
     db.session.commit()
 
     return jsonify({"message": "compra realizada"}), 200
+=======
+@api.route('/user_profile', methods=['PUT'])
+@jwt_required()
+def editUser():
+    user_id = get_jwt_identity()
+    data = request.json
+    user = User.query.get(user_id)   
+    user.name = data.get("name")
+    user.lastname = data.get("lastname")
+    user.email = data.get("email")
+    user.password = data.get("password")
+
+    db.session.commit()
+
+    return jsonify({"message": "user_profile updated"}), 200
+>>>>>>> main

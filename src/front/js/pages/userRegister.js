@@ -55,6 +55,9 @@ export const User_register = () => {
             <label>Nombre</label>
             <input
               type="text"
+              pattern="(?=.[a-z])(?=.*[A-Z]).{2,}"
+              required="required"
+              title="El nombre debe contener al menos 1 letra mayúscula, 1 letra minúscula, 2 caracteres"
               className="form-control"
               id="nameInput"
               name="name"
@@ -64,6 +67,9 @@ export const User_register = () => {
             <label>Apellido</label>
             <input
               type="text"
+              pattern="(?=.[a-z])(?=.*[A-Z]).{2,}"
+              required="required"
+              title="El apellido debe contener al menos 1 letra mayúscula, 1 letra minúscula, 2 caracteres"
               className="form-control"
               id="lastnameInput"
               name="lastname"
@@ -74,6 +80,9 @@ export const User_register = () => {
               <label>Email</label>
               <input
                 type="email"
+                // pattern="[a-z0-9._%+-]+@[a-z.-]+\.[a-z]{6,}$"
+                required="required"
+                // title="El email debe contener al menos 1 letra minúscula, @, 6 caracteres"
                 className="form-control"
                 id="EmailInput"
                 name="email"
@@ -81,10 +90,12 @@ export const User_register = () => {
                 placeholder="Email"
                 onChange={handleChange}
               />
-              <small id="emailHelp" className="text-light form-text"></small>
             </div>
             <div className="input-group form-group mt-3">
               <input
+                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,12}"
+                required="required"
+                title="La contraseña debe tener al menos 1 letra mayúscula, 1 letra minúscula, 1 número, 8 caracteres"
                 type="password"
                 className="form-control text-center p-3"
                 name="password"
@@ -96,10 +107,6 @@ export const User_register = () => {
               <button className="btn btn-primary mt-3 w-100 p-2">
                 Registrarse
               </button>
-              <small
-                id="passworderror"
-                className="text-light form-text"
-              ></small>
             </div>
           </form>
         </div>
