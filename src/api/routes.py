@@ -153,7 +153,7 @@ def get_private_course():
     course = [compra.course.serialize() for compra in compras]
     return jsonify(course), 200
 
-
+#ruta de compra 
 
 @api.route('/compra', methods=['POST'])
 @jwt_required()

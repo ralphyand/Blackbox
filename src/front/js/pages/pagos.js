@@ -9,6 +9,7 @@ const stripePromise = loadStripe(
   "pk_test_51LVGdOAWxURsmnxVuEmgDElOR88YSms9d8199nDEul665RQ2fzoczeCEp92YkusblX4BPJRBLkJLXcZmBPKQZt0000IkeUv2qX"
 );
 
+//cobro con tarjeta desde stripe
 export const Pagos = () => {
   const params = useParams();
   const [detalles, setDetalles] = useState();

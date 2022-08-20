@@ -42,7 +42,7 @@ export const Detalles = () => {
           </li>
           <Link
             to={`/pagos/${detalles.id}`}
-            className="btn btn-dark rounded-pill"
+            className="btn btn-dark rounded-pill m-3"
           >
             Comprar
           </Link>
@@ -51,7 +51,7 @@ export const Detalles = () => {
             to={`/Start_course/${detalles.id}`}
             className="  btn btn-dark rounded-pill"
           >
-            curso
+            Comenzar
           </Link>
         </ul>
       </div>

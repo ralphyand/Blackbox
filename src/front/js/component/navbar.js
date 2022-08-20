@@ -43,7 +43,7 @@ export const Navbar = () => {
                     <i className="fas fa-user-circle" to="/Loguin"></i>
                   </Link>
                 ) : (
-                  <div className="text-light ">
+                  <div className="text-light m-1 ">
                     {store.name}
                     <button
                       className="btn btn-outline-light mx-2 "
