@@ -20,7 +20,7 @@ class User(db.Model):
             "id": self.id,
             "email": self.email,
             "name": self.name,
-            "lastname " : self.lastname,
+            "lastname": self.lastname,
             "is_admin": self.is_admin
 
         }
