@@ -163,6 +163,7 @@ def compra_user():
 
     return jsonify({"message": "compra realizada"}), 200
 
+
 @api.route('/user_profile', methods=['PUT'])
 @jwt_required()
 def editUser():
@@ -177,4 +178,6 @@ def editUser():
     db.session.commit()
 
     return jsonify({"message": "user_profile updated"}), 200
+
+ 
 

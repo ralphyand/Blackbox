@@ -44,7 +44,9 @@ export const Navbar = () => {
                   </Link>
                 ) : (
                   <div className="text-light m-1 ">
-                    {store.name}
+                    <Link to="/user_profile" className="text-light ">
+                      {store.name}
+                    </Link>
                     <button
                       className="btn btn-outline-light mx-2 "
                       onClick={logout}
