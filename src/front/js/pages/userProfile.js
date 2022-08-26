@@ -72,6 +72,7 @@ export const User_profile = () => {
         <div className="row justify-content-center">
           <div className="col-md-5 usercard">
             <form
+              id="containeruno"
               className="row g-3 tabla my-5 py-3 px-5 rounded"
               onSubmit={sendData}
             >
@@ -122,7 +123,7 @@ export const User_profile = () => {
                 onChange={handleChange}
               />
               <div className="col-12 text-end">
-                <button type="submit" className="btn btn-outline-primary">
+                <button type="submit" className="btn btn-dark rounded-pill m-3">
                   Guardar
                 </button>
               </div>

@@ -42,3 +42,24 @@
   font-size: 18px;
   top: 2rem;
 }
+
+.banner-image {
+  background-image: url("https://images.unsplash.com/photo-1581591524425-c7e0978865fc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  width: 100%;
+  height: auto;
+}
+
+#principaluno {
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  font-size: 30pt;
+  font-weight: 100;
+  text-align: center;
+  width: 100%;
+  margin-top: 50%;
+  font-family: "Crete Round", serif;
+}

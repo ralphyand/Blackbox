@@ -44,7 +44,7 @@ export const User_register = () => {
     <div
       // id="login1"
       className="imgFondo d-flex flex-column min-vh-100 justify-content-center align-items-center"
-      id="template-bg-3 login1"
+      id="containerRegister template-bg-3 login1"
     >
       <div className="registro card mb-5 p-5 bg-dark bg-gradient text-white col-md-4">
         <div className="card-header text-center">
@@ -104,7 +104,7 @@ export const User_register = () => {
               />
             </div>
             <div className="text-center">
-              <button className="btn btn-primary mt-3 w-100 p-2">
+              <button className="btn btn-dark rounded-pill m-3">
                 Registrarse
               </button>
             </div>

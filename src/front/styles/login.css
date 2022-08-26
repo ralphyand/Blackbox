@@ -3,6 +3,16 @@
 }
 
 #template-bg-3 {
-  background-image: url("https://images.unsplash.com/photo-1520549233664-03f65c1d1327?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80");
-  position: relative;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  overflow: hidden;
+
+  background-image: url("https://images.unsplash.com/photo-1573011257935-a75fcc818115?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
+  display: block;
+  margin: auto;
+  width: 100%;
+  height: auto;
+  opacity: 0, 1%;
 }

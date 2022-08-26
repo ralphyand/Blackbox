@@ -1,4 +1,10 @@
-.banner-image {
-  background-image: url("https://images.unsplash.com/photo-1494326478400-c7963563456f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
-  background-size: cover;
+@import url("https://fonts.googleapis.com/css2?family=Aboreto&family=Akshar:wght@300&family=Crete+Round:ital@1&display=swap");
+
+h1 {
+  font-family: "Crete Round", serif;
+  color: rgb(41, 41, 41);
+}
+
+p {
+  font-family: "Crete Round";
 }

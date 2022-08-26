@@ -1,9 +1,11 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import Carousel from "../component/carousel";
+import Teacher from "../component/teacher";
 import Card from "../component/card";
 import Course from "../component/course";
 import logotipo from "../../img/logotipo.png";
+
 //import Payment from "../component/payment";
 import "../../styles/home.css";
 
@@ -12,11 +14,13 @@ export const Home = () => {
   const courseFiltrados = store.course.filter((curso) => curso.price < 10);
   return (
     <>
-      <div className="carousel text-center">
+      <div className="carousel text-center" id="homeOne">
         <Carousel />
-        <div className="container">
+
+        <div className="container ">
+          <h2 id="nuestrosCursos"> Nuestros cursos más economicos </h2>
           <div className="col">
-            <div className="album py-3 bg-light">
+            <div className="album py-3 ">
               <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                 {courseFiltrados.map((course) => {
                   return (
@@ -32,25 +36,60 @@ export const Home = () => {
               </div>
             </div>
 
-            <hr class="featurette-divider" />
-
-            <div class="row featurette">
-              <div class="col-md-7">
+            <hr class="featurette-divider " />
+            <div class="row featurette" id="cardseg">
+              <div class="col-md-7 ">
                 <h2 class="featurette-heading fw-normal lh-1">
-                  And lastly, this one.{" "}
-                  <span class="text-muted">Checkmate.</span>
+                  Muestra el mundo desde el lente de tu camara{" "}
                 </h2>
                 <p class="lead">
-                  And yes, this is the last block of representative placeholder
-                  content. Again, not really intended to be actually read,
-                  simply here to give you a better view of what this would look
-                  like with some actual content. Your content.
+                  Te gustaria hacer las mejores fotos en cada viaje?, desde el
+                  móvil, o cualquier camara?, estas en el lugar adecuado, aquí
+                  aprenderas todo lo que necesitas para hacer tus fotografias
+                  más perfectas. desde lo más basico a los fundamentos más
+                  importantes.
                 </p>
               </div>
               <div class="col-md-5">
                 <div class="card text-bg-dark">
                   <img
-                    src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80"
+                    src="https://images.unsplash.com/photo-1460134846237-51c777df6111?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+                    class="card-img"
+                    alt="..."
+                  />
+                </div>
+              </div>
+            </div>
+            <hr class="featurette-divider" />
+
+            <div class="row featurette">
+              <div class="col-md-7 order-md-2">
+                <h2 class="featurette-heading fw-normal lh-1">
+                  Black Box y sus principios{" "}
+                </h2>
+                <p class="lead">
+                  La plataforma nace de la idea de llegar a cientos de alumnos
+                  en cualquier lugar del mundo, de una forma didáctica y
+                  sencilla, con el fin de compaginar la vida diaria con el
+                  apasionante mundo de la fotografia, nuestro lema es lograr que
+                  nuestros estudiantes puedan plasmar cualquier foto desde un
+                  modo profesional.
+                </p>
+              </div>
+
+              <div class="lp-element lp-pom-block " id="lp-pom-block-141">
+                <div id="lp-pom-block-141-color-overlay img-fluid">
+                  <div class="texto-encima"></div>
+
+                  <div class="centrado text-light"> Bienvenido,fotógrafo </div>
+                </div>
+                <div class="lp-pom-block-content"></div>
+              </div>
+              <hr class="featurette-divider" />
+              <div class="col-md-5 order-md-1">
+                <div class="card text-bg-dark">
+                  <img
+                    src="https://images.unsplash.com/photo-1563404203912-0b424db17de6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
                     class="card-img"
                     alt="..."
                   />
@@ -61,39 +100,23 @@ export const Home = () => {
             <hr class="featurette-divider" />
 
             <div class="row featurette">
-              <div class="col-md-7 order-md-2">
-                <h2 class="featurette-heading fw-normal lh-1">
-                  Oh yeah, it’s that good.{" "}
-                  <span class="text-muted">See for yourself.</span>
-                </h2>
-                <p class="lead">
-                  Another featurette? Of course. More placeholder content here
-                  to give you an idea of how this layout would work with some
-                  actual real-world content in place.
-                </p>
-              </div>
-              <div class="col-md-5 order-md-1"></div>
-            </div>
-
-            <hr class="featurette-divider" />
-
-            <div class="row featurette">
               <div class="col-md-7">
                 <h2 class="featurette-heading fw-normal lh-1">
-                  And lastly, this one.{" "}
-                  <span class="text-muted">Checkmate.</span>
+                  Los mejores resultados, los encontraras aqui{" "}
                 </h2>
                 <p class="lead">
-                  And yes, this is the last block of representative placeholder
-                  content. Again, not really intended to be actually read,
-                  simply here to give you a better view of what this would look
-                  like with some actual content. Your content.
+                  Nuestros alumnos son los más destacados, por la pasion que
+                  sienten al tomar su primera fotografia, cada resultado es un
+                  paso más a la perfección, no dudes en comenzar un camino tan
+                  encantador como lo es plasmar en una imagen tus pensamientos y
+                  lo más importante, el arte de hacerlo bien y con las mejores
+                  herramientas.
                 </p>
               </div>
               <div class="col-md-5">
                 <div class="card text-bg-dark">
                   <img
-                    src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80"
+                    src="https://images.unsplash.com/photo-1558023567-20c42af0b4b7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
                     class="card-img"
                     alt="..."
                   />
@@ -104,6 +127,9 @@ export const Home = () => {
             <hr class="featurette-divider" />
           </div>
         </div>
+      </div>
+      <div className="container-fluid " id="teachercontainer">
+        <Teacher />
       </div>
     </>
   );
