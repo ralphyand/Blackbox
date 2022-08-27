@@ -70,10 +70,9 @@ export const User_profile = () => {
     <div>
       <div className="container-fluid fondo">
         <div className="row justify-content-center">
-          <div className="col-md-4 usercard ">
+          <div className="col-md-4">
             <form
-              id="containeruno"
-              className="row g-3 tabla my-5 py-3 px-5 rounded"
+              className="row g-3 tabla my-5 py-3 px-5 rounded bg-dark bg-gradient text-white"
               onSubmit={sendData}
             >
               <div className="card-header text-center">
