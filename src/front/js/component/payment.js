@@ -36,7 +36,7 @@ export default function Payment(props) {
   const cardStyle = {
     style: {
       base: {
-        color: "#32325d",
+        // color: "#32325d",
         fontFamily: "Arial, sans-serif",
         fontSmoothing: "antialiased",
         fontSize: "16px",
@@ -112,7 +112,11 @@ export default function Payment(props) {
         options={cardStyle}
         onChange={handleChange}
       />
-      <button disabled={processing || disabled || succeeded} id="submit">
+      <button
+        disabled={processing || disabled || succeeded}
+        id="submit"
+        className="btn btn-dark rounded-pill m-3"
+      >
         <span id="button-text">
           {processing ? (
             <div className="spinner" id="spinner"></div>

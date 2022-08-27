@@ -70,12 +70,14 @@ export const User_profile = () => {
     <div>
       <div className="container-fluid fondo">
         <div className="row justify-content-center">
-          <div className="col-md-5 usercard">
+          <div className="col-md-4 usercard ">
             <form
-              className="row g-3 tabla my-5 py-3 px-5 rounded"
+              className="row g-3 tabla my-5 py-3 px-5 rounded bg-dark bg-gradient text-white"
               onSubmit={sendData}
             >
-              <h6 className="fs-5 text-center">Modificar mis datos</h6>
+              <div className="card-header text-center">
+                <h3>Modificar mis datos</h3>
+              </div>
               <label>Nombre</label>
               <input
                 defaultValue={user.name}
@@ -121,8 +123,8 @@ export const User_profile = () => {
                 // placeholder="Confirma la nueva contraseña"
                 onChange={handleChange}
               />
-              <div className="col-12 text-end">
-                <button type="submit" className="btn btn-outline-primary">
+              <div className="col-12 text-center">
+                <button type="submit" className="btn btn-primary">
                   Guardar
                 </button>
               </div>
