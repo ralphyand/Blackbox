@@ -26,7 +26,7 @@ export const My_course = () => {
         <div className="row">
           <div className="container text-center">
             <div className="col">
-              <div className="album py-3 ">
+              <div className="album py-5 ">
                 <div className="row row-cols-1 row-cols-sm-2 row-cols-md-6">
                   <Card_private
                     id={course.id}

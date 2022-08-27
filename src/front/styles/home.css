@@ -16,8 +16,8 @@
   margin-top: 3%;
   margin-bottom: 2%;
   font-size: 40px;
-
-  /*  {degradado con neon } */
+}
+/*  {degradado con neon } 
   color: rgb(17, 17, 17);
   background: -moz-linear-gradient(
     45deg,
@@ -54,6 +54,7 @@
   z-index: 100;
   -webkit-transform: translate3d(0, 0, 0);
 }
+*/
 
 #lp-pom-block-141 {
   display: block;

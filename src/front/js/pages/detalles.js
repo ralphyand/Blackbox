@@ -65,7 +65,7 @@ export const Detalles = () => {
                 to={`/start_course/${detalles.id}`}
                 className="btn btn-dark rounded-pill m-3"
               >
-                <i class="fas fa-video">{"  "} Continuar </i>
+                <i class="fas fa-video">{"  "} Comenzar </i>
               </Link>
             ) : (
               <Link

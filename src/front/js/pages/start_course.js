@@ -18,8 +18,8 @@ export const Start_course = () => {
     <div className="container">
       <div className=" text-center">
         <h1 id="nameCourse">{start_course.name}</h1>
-        <div class="embed-responsive embed-responsive-16by9">
-          <div class="ratio ratio-21x9 p-5">
+        <div className="embed-responsive embed-responsive-16by9">
+          <div className="ratio ratio-21x9 p-5">
             {start_course.temario.videos ? (
               <iframe
                 width="560"
@@ -53,6 +53,7 @@ export const Start_course = () => {
                       setActive({ index: index, url: video.description });
                     }}
                   >
+                    <i className="fas fa-video"> </i> {"  "} {"  "}
                     {video.name}
                   </li>
                 );

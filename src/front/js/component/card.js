@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export const Card = (props) => (
   <div className="col">
-    <div className="card shadow-sm">
+    <div className="card shadow-sm" id="cardCursoPrincipal">
       <img src={props.imagen} className="card-img-top" alt="..." />
       <h1 className="">{props.name}</h1>
       <div className="card-body">
