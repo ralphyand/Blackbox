@@ -1,3 +1,9 @@
-*{
-    
+.header {
+    background: url("https://i.blogs.es/2e1ece/podria-cerrar-olympus-division-camaras-rumores-01/1366_2000.jpg") no-repeat center;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+*/ .header .navbar {
+    background-color: transparent !important;
 }

@@ -17,6 +17,8 @@ api = Blueprint('api', __name__)
 def create_user():
     data = request.json
     user = User(name=data.get('name'), lastname=data.get('lastname'), email=data.get('email'), password=data.get('password'))
+    if user:
+        return jsonify({"message": "usuario ya existe"}), 500
     db.session.add(user)
     db.session.commit()
 

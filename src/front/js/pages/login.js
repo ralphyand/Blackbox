@@ -66,7 +66,7 @@ export const Login = () => {
                 id="EmailInput"
                 name="EmailInput"
                 aria-describedby="emailHelp"
-                placeholder="Enter email"
+                placeholder="Introducir email"
                 onChange={(event) => setEmail(event.target.value)}
               />
               <small id="emailHelp" className="text-light form-text">

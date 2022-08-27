@@ -33,7 +33,7 @@ export const Detalles = () => {
             <i class="fas fa-euro-sign"> {detalles.price} </i>
           </li>
           <li>
-            <i class="fas fa-hourglass-half"> tiempo {detalles.time} </i>
+            <i class="fas fa-hourglass-half"> Duración {detalles.time} </i>
           </li>
           <li>
             <small className="text-muted">
