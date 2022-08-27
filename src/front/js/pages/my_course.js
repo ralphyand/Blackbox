@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import "../../styles/my_course.css";
-
 import card_private, { Card_private } from "../component/card_private";
-
-//import Payment from "../component/payment";
-// import "../../styles/home.css";
+import "../../styles/home.css";
 
 export const My_course = () => {
   const [detalles, setDetalles] = useState([]);

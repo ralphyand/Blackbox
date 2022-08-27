@@ -72,7 +72,8 @@ export const User_profile = () => {
         <div className="row justify-content-center">
           <div className="col-md-4 usercard ">
             <form
-              className="row g-3 tabla my-5 py-3 px-5 rounded bg-dark bg-gradient text-white"
+              id="containeruno"
+              className="row g-3 tabla my-5 py-3 px-5 rounded"
               onSubmit={sendData}
             >
               <div className="card-header text-center">
@@ -123,8 +124,9 @@ export const User_profile = () => {
                 // placeholder="Confirma la nueva contraseña"
                 onChange={handleChange}
               />
-              <div className="col-12 text-center">
-                <button type="submit" className="btn btn-primary">
+
+              <div className="col-12 text-end">
+                <button type="submit" className="btn btn-dark rounded-pill m-3">
                   Guardar
                 </button>
               </div>

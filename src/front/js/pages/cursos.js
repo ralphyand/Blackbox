@@ -9,6 +9,7 @@ export const Cursos = (props) => {
   const { store, actions } = useContext(Context);
   return (
     <div className="container text-center">
+      <h2 id="nuestrosCursos"> Todos Nuestros Cursos </h2>
       <div className="col">
         <div className="album py-3 bg-light">
           <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">

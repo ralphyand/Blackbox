@@ -26,11 +26,4 @@ const Course = (props) => {
   );
 };
 
-// Course.propTypes = {
-//   image: PropTypes.string,
-//   name: PropTypes.string,
-//   description: PropTypes.string,
-//   id: PropTypes.number,
-// };
-
 export default Course;

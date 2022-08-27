@@ -87,13 +87,9 @@ export const Login = () => {
               </small>
             </div>
             <div className="text-center">
-              <button className="btn btn-primary mt-3 w-100 p-2">
-                Acceder
-              </button>
+              <button className="btn btn-dark rounded-pill m-3">Acceder</button>
             </div>
           </form>
-
-          <div className="text-danger"></div>
         </div>
       </div>
     </div>
