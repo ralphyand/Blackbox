@@ -44,7 +44,7 @@ export const User_register = () => {
     <div
       // id="login1"
       className="imgFondo d-flex flex-column min-vh-100 justify-content-center align-items-center"
-      id="template-bg-3 login1"
+      id="containerRegister template-bg-3 login1"
     >
       <div className="registro card mb-5 p-5 bg-dark bg-gradient text-white col-md-4">
         <div className="card-header text-center">
@@ -58,7 +58,7 @@ export const User_register = () => {
               pattern="(?=.[a-z])(?=.*[A-Z]).{2,}"
               required="required"
               title="El nombre debe contener al menos 1 letra mayúscula, 1 letra minúscula, 2 caracteres"
-              className="form-control"
+              className="form-control text-center"
               id="nameInput"
               name="name"
               placeholder="Nombre"
@@ -70,7 +70,7 @@ export const User_register = () => {
               pattern="(?=.[a-z])(?=.*[A-Z]).{2,}"
               required="required"
               title="El apellido debe contener al menos 1 letra mayúscula, 1 letra minúscula, 2 caracteres"
-              className="form-control"
+              className="form-control text-center"
               id="lastnameInput"
               name="lastname"
               placeholder="Apellido"
@@ -80,10 +80,10 @@ export const User_register = () => {
               <label>Email</label>
               <input
                 type="email"
-                // pattern="[a-z0-9._%+-]+@[a-z.-]+\.[a-z]{6,}$"
+                // pattern="[a-z._%+-]+@[a-z.-]+\.[a-z]{6,}$"
                 required="required"
                 // title="El email debe contener al menos 1 letra minúscula, @, 6 caracteres"
-                className="form-control"
+                className="form-control text-center"
                 id="EmailInput"
                 name="email"
                 aria-describedby="emailHelp"
@@ -104,7 +104,7 @@ export const User_register = () => {
               />
             </div>
             <div className="text-center">
-              <button className="btn btn-primary mt-3 w-100 p-2">
+              <button className="btn btn-dark rounded-pill m-3">
                 Registrarse
               </button>
             </div>

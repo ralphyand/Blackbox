@@ -21,7 +21,7 @@ export const Pagos = () => {
   }, []);
 
   return detalles ? (
-    <div id="trajetadePago" className=" text-center ">
+    <div id="tarjetadePago" className=" text-center ">
       <Elements stripe={stripePromise}>
         <Payment
           id={detalles.id}

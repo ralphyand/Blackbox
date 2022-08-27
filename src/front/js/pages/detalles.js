@@ -1,20 +1,39 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link, useParams } from "react-router-dom";
 import "../../styles/detalles.css";
 import { loadStripe } from "@stripe/stripe-js";
+import { Context } from "../store/appContext";
 
 export const Detalles = () => {
   const [detalles, setDetalles] = useState();
   const params = useParams();
+  const { actions, store } = useContext(Context);
 
   useEffect(() => {
-    fetch(process.env.BACKEND_URL + "/api/course/" + params.id)
+    let confi = {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+
+    if (localStorage.getItem("jwt-token")) {
+      confi = {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + localStorage.getItem("jwt-token"),
+        },
+      };
+    }
+
+    fetch(process.env.BACKEND_URL + "/api/course/" + params.id, confi)
       .then((data) => data.json())
       .then((data) => setDetalles(data));
   }, []);
 
   return detalles ? (
-    <div className="card mb-3 p-4 bg-light">
+    <div>
       <div class="fond"> </div>
       <div class="carduno">
         <div class="thumbnail">
@@ -33,26 +52,37 @@ export const Detalles = () => {
             <i class="fas fa-euro-sign"> {detalles.price} </i>
           </li>
           <li>
-            <i class="fas fa-hourglass-half"> tiempo {detalles.time} </i>
+            <i class="fas fa-hourglass-half"> Duración {detalles.time} </i>
           </li>
           <li>
             <small className="text-muted">
               Profesor: {detalles.teacher.name}
             </small>
           </li>
-          <Link
-            to={`/pagos/${detalles.id}`}
-            className="btn btn-dark rounded-pill m-3"
-          >
-            Comprar
-          </Link>
-
-          <Link
-            to={`/Start_course/${detalles.id}`}
-            className="  btn btn-dark rounded-pill"
-          >
-            Comenzar
-          </Link>
+          {store.token ? (
+            detalles.is_paid ? (
+              <Link
+                to={`/start_course/${detalles.id}`}
+                className="btn btn-dark rounded-pill m-3"
+              >
+                <i class="fas fa-video">{"  "} Comenzar </i>
+              </Link>
+            ) : (
+              <Link
+                to={`/pagos/${detalles.id}`}
+                className="btn btn-dark rounded-pill m-3"
+              >
+                <i class="fas fa-shopping-cart">{"  "}Comprar</i>
+              </Link>
+            )
+          ) : (
+            <Link
+              to={`/user_register`}
+              className="btn btn-dark rounded-pill m-3"
+            >
+              <i class="far fa-user"> {""}Crear cuenta </i>
+            </Link>
+          )}
         </ul>
       </div>
     </div>

@@ -17,6 +17,8 @@ api = Blueprint('api', __name__)
 def create_user():
     data = request.json
     user = User(name=data.get('name'), lastname=data.get('lastname'), email=data.get('email'), password=data.get('password'))
+    if user:
+        return jsonify({"message": "usuario ya existe"}), 500
     db.session.add(user)
     db.session.commit()
 
@@ -53,9 +55,16 @@ def get_cursos() :
 
 
 @api.route('/course/<int:id>', methods=['GET'])
+@jwt_required(optional=True)
 def course_detail(id) :
+    user_id = get_jwt_identity()
     course = Course.query.get(id)
-    return jsonify(course.serialize()),200
+    data = course.serialize()
+    data["is_paid"]= False   
+    if user_id : 
+        compra = Compras.query.filter_by(user_id= user_id,course_id=id).first() 
+        data["is_paid"]= True if compra else False   
+    return jsonify(data),200
 
 
 @api.route('/user', methods=['GET'])
@@ -178,6 +187,9 @@ def editUser():
     db.session.commit()
 
     return jsonify({"message": "user_profile updated"}), 200
+
+
+
 
  
 

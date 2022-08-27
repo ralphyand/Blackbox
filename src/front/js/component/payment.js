@@ -10,7 +10,7 @@ export default function Payment(props) {
   const [clientSecret, setClientSecret] = useState("");
   const stripe = useStripe();
   const elements = useElements();
-  const [email, setEmail] = useState("");
+
   const navigate = useNavigate();
   useEffect(() => {
     console.log(props);
@@ -36,7 +36,7 @@ export default function Payment(props) {
   const cardStyle = {
     style: {
       base: {
-        color: "#32325d",
+        // color: "#32325d",
         fontFamily: "Arial, sans-serif",
         fontSmoothing: "antialiased",
         fontSize: "16px",
@@ -64,7 +64,6 @@ export default function Payment(props) {
     setProcessing(true);
 
     const payload = await stripe.confirmCardPayment(clientSecret, {
-      receipt_email: email,
       payment_method: {
         card: elements.getElement(CardElement),
       },
@@ -100,42 +99,49 @@ export default function Payment(props) {
   };
 
   return (
-    <form id="payment-form" onSubmit={handleSubmit}>
-      <input
-        type="text"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        placeholder="Enter email address"
-      />
-      <CardElement
-        id="card-element"
-        options={cardStyle}
-        onChange={handleChange}
-      />
-      <button disabled={processing || disabled || succeeded} id="submit">
-        <span id="button-text">
-          {processing ? (
-            <div className="spinner" id="spinner"></div>
-          ) : (
-            "Pay now"
+    <div className="center-card p-3" id="box">
+      <form id="payment-form" onSubmit={handleSubmit}>
+        <div className="imgBx">
+          <img
+            src="https://images.unsplash.com/photo-1589758438368-0ad531db3366?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80"
+            className="card-img-top"
+            alt="..."
+          />
+
+          <div class="details">
+            <CardElement
+              id="card-element"
+              options={cardStyle}
+              onChange={handleChange}
+            />
+
+            <button
+              disabled={processing || disabled || succeeded}
+              className="btn btn-dark rounded-pill m-5 mx-2"
+              id="submit"
+            >
+              <span id="button-text ">
+                {processing ? <div id="spinner"></div> : "Pay now"}
+              </span>
+            </button>
+          </div>
+          {/* Show any error that happens when processing the payment */}
+          {error && (
+            <div className="card-error" role="alert">
+              {error}
+            </div>
           )}
-        </span>
-      </button>
-      {/* Show any error that happens when processing the payment */}
-      {error && (
-        <div className="card-error" role="alert">
-          {error}
+          {/* Show a success message upon completion */}
+          <p className={succeeded ? "result-message" : "result-message hidden"}>
+            Payment succeeded, see the result in your
+            <a href={`https://dashboard.stripe.com/test/payments`}>
+              {" "}
+              Stripe dashboard.
+            </a>{" "}
+            Refresh the page to pay again.
+          </p>
         </div>
-      )}
-      {/* Show a success message upon completion */}
-      <p className={succeeded ? "result-message" : "result-message hidden"}>
-        Payment succeeded, see the result in your
-        <a href={`https://dashboard.stripe.com/test/payments`}>
-          {" "}
-          Stripe dashboard.
-        </a>{" "}
-        Refresh the page to pay again.
-      </p>
-    </form>
+      </form>
+    </div>
   );
 }
