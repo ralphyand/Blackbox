@@ -22,25 +22,23 @@ export const My_course = () => {
 
   return detalles.map((course, index) => {
     return (
-      <>
-        <div className="row">
-          <div className="container text-center">
-            <div className="col">
-              <div className="album py-5 ">
-                <div className="row row-cols-1 row-cols-sm-2 row-cols-md-6">
-                  <Card_private
-                    id={course.id}
-                    price={course.price}
-                    name={course.name}
-                    description={course.description}
-                    imagen={course.imagen}
-                  />
-                </div>
+      <div className="container">
+        <div className="row justify-content-center">
+          <div className="col-6">
+            <div className="album py-3">
+              <div className="row row-cols-1">
+                <Card_private
+                  id={course.id}
+                  price={course.price}
+                  name={course.name}
+                  description={course.description}
+                  imagen={course.imagen}
+                />
               </div>
             </div>
           </div>
         </div>
-      </>
+      </div>
     );
   });
 };

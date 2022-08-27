@@ -36,7 +36,7 @@ export default function Payment(props) {
   const cardStyle = {
     style: {
       base: {
-        color: "#32325d",
+        // color: "#32325d",
         fontFamily: "Arial, sans-serif",
         fontSmoothing: "antialiased",
         fontSize: "16px",

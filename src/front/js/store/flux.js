@@ -78,14 +78,20 @@ const getState = ({ getStore, getActions, setStore }) => {
           body: JSON.stringify({ email: email, password: password }),
         });
 
-        if (!resp.ok) throw Error("There was a problem in the login request");
+        // if (!resp.ok) throw Error("There was a problem in the login request");
+        console.log(resp);
 
         if (resp.status === 401) {
-          throw "Invalid credentials";
+          // !resp.ok
+          // throw "Invalid credentials";
+          const error = await resp.json();
+          alert(error.message);
+          console.log(error);
         } else if (resp.status === 400) {
           throw "Invalid email or password format";
         }
         const data = await resp.json();
+        console.log(data);
         // save your token in the localStorage
         //also you should set your user into the store using the setStore function
         localStorage.setItem("jwt-token", data.token); // guardar sesión en el disco duro(token y nombre del user)
