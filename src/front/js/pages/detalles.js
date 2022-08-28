@@ -87,7 +87,7 @@ export const Detalles = () => {
       </div>
     </div>
   ) : (
-    <h1>este curso no esta disponible </h1>
+    <h1></h1>
   );
 };
 

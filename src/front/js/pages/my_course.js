@@ -22,7 +22,7 @@ export const My_course = () => {
 
   return detalles.map((course, index) => {
     return (
-      <div className="container">
+      <div className="container" id="containercardprivada">
         <div className="row justify-content-center">
           <div className="col-6">
             <div className="album py-3">

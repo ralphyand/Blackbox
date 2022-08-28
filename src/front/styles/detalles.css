@@ -40,7 +40,7 @@ body {
 .thumbnail {
   float: left;
   position: absolute;
-  left: 30px;
+  left: 20px;
   top: -30px;
   height: 320px;
   width: 530px;

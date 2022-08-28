@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 import "../../styles/card_private.css";
 
 export const Card_private = (props) => (
-  <div class="card mb-3 border-secondary" id="micurso">
+  <div class="card mb-3 " id="caja">
     <div class="row g-0">
       <div class="col-md-4">
         <img
           src={props.imagen}
-          class="img-fluid rounded-start py-3"
+          class="img-fluid rounded-start py-3 "
           alt="..."
         />
       </div>

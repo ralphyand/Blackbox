@@ -68,7 +68,7 @@ export const User_profile = () => {
 
   return (
     <div>
-      <div className="container-fluid fondo">
+      <div className="container-fluid fondo" id="principalProfile">
         <div className="row justify-content-center">
           <div className="col-md-4">
             <form

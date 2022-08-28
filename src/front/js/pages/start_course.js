@@ -66,7 +66,7 @@ export const Start_course = () => {
       </div>
     </div>
   ) : (
-    <h1> NO HAY CONTENIDO PARA ESTE CURSO </h1>
+    <h1> </h1>
   );
 };
 
