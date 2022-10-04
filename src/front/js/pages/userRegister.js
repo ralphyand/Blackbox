@@ -55,7 +55,6 @@ export const User_register = () => {
             <label>Nombre</label>
             <input
               type="text"
-              pattern="(?=.[a-z])(?=.*[A-Z]).{2,}"
               required="required"
               title="El nombre debe contener al menos 1 letra mayúscula, 1 letra minúscula, 2 caracteres"
               className="form-control text-center"
@@ -67,7 +66,6 @@ export const User_register = () => {
             <label>Apellido</label>
             <input
               type="text"
-              pattern="(?=.[a-z])(?=.*[A-Z]).{2,}"
               required="required"
               title="El apellido debe contener al menos 1 letra mayúscula, 1 letra minúscula, 2 caracteres"
               className="form-control text-center"

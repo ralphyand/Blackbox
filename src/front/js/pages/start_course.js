@@ -18,7 +18,7 @@ export const Start_course = () => {
     <div className="container">
       <div className=" text-center">
         <h1 id="nameCourse">{start_course.name}</h1>
-        <div className="embed-responsive embed-responsive-16by9">
+        <div className="embed-responsive embed-responsive-16by9 pt-4">
           <div className="ratio ratio-21x9 p-5">
             {start_course.temario.videos ? (
               <iframe
@@ -45,7 +45,7 @@ export const Start_course = () => {
               {start_course.temario.videos.map((video, index) => {
                 return (
                   <li
-                    className={`list-group-item list-group-item-action list-group-item-dark ${
+                    className={`list-group-item list-group-item-action list-group-item-dark pt-1 ${
                       active.index == index ? "active" : ""
                     }`}
                     aria-current={active.index == index ? "true" : ""}
