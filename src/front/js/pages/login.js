@@ -24,7 +24,7 @@ export const Login = () => {
       formIsValid = true;
     }
 
-    if (!password.match(/^[a-zA-Z]{8,22}$/)) {
+    if (!password.match(/^[a-zA-Z]{8,12}$/)) {
       formIsValid = false;
       setpasswordError(
         "Solo las letras y la longitud deben tener un mínimo de 8 caracteres y un máximo de 22 caracteres"
@@ -46,9 +46,6 @@ export const Login = () => {
     }
   };
 
-  // if (store.token && store.token != "" && store.token != undefined)
-  //   navigate.push("/");
-
   return (
     <div
       className="d-flex flex-column min-vh-100 justify-content-center align-items-center"
@@ -69,7 +66,7 @@ export const Login = () => {
                 id="EmailInput"
                 name="EmailInput"
                 aria-describedby="emailHelp"
-                placeholder="Enter email"
+                placeholder="Introducir email"
                 onChange={(event) => setEmail(event.target.value)}
               />
               <small id="emailHelp" className="text-light form-text">
@@ -90,13 +87,9 @@ export const Login = () => {
               </small>
             </div>
             <div className="text-center">
-              <button className="btn btn-primary mt-3 w-100 p-2">
-                Acceder
-              </button>
+              <button className="btn btn-dark rounded-pill m-3">Acceder</button>
             </div>
           </form>
-
-          <div className="text-danger"></div>
         </div>
       </div>
     </div>

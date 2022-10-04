@@ -44,7 +44,7 @@ export const User_register = () => {
     <div
       // id="login1"
       className="imgFondo d-flex flex-column min-vh-100 justify-content-center align-items-center"
-      id="template-bg-3 login1"
+      id="containerRegister template-bg-3 login1"
     >
       <div className="registro card mb-5 p-5 bg-dark bg-gradient text-white col-md-4">
         <div className="card-header text-center">
@@ -55,7 +55,10 @@ export const User_register = () => {
             <label>Nombre</label>
             <input
               type="text"
-              className="form-control"
+              pattern="(?=.[a-z])(?=.*[A-Z]).{2,}"
+              required="required"
+              title="El nombre debe contener al menos 1 letra mayúscula, 1 letra minúscula, 2 caracteres"
+              className="form-control text-center"
               id="nameInput"
               name="name"
               placeholder="Nombre"
@@ -64,7 +67,10 @@ export const User_register = () => {
             <label>Apellido</label>
             <input
               type="text"
-              className="form-control"
+              pattern="(?=.[a-z])(?=.*[A-Z]).{2,}"
+              required="required"
+              title="El apellido debe contener al menos 1 letra mayúscula, 1 letra minúscula, 2 caracteres"
+              className="form-control text-center"
               id="lastnameInput"
               name="lastname"
               placeholder="Apellido"
@@ -74,17 +80,22 @@ export const User_register = () => {
               <label>Email</label>
               <input
                 type="email"
-                className="form-control"
+                // pattern="[a-z._%+-]+@[a-z.-]+\.[a-z]{6,}$"
+                required="required"
+                // title="El email debe contener al menos 1 letra minúscula, @, 6 caracteres"
+                className="form-control text-center"
                 id="EmailInput"
                 name="email"
                 aria-describedby="emailHelp"
                 placeholder="Email"
                 onChange={handleChange}
               />
-              <small id="emailHelp" className="text-light form-text"></small>
             </div>
             <div className="input-group form-group mt-3">
               <input
+                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,12}"
+                required="required"
+                title="La contraseña debe tener al menos 1 letra mayúscula, 1 letra minúscula, 1 número, 8 caracteres"
                 type="password"
                 className="form-control text-center p-3"
                 name="password"
@@ -93,13 +104,9 @@ export const User_register = () => {
               />
             </div>
             <div className="text-center">
-              <button className="btn btn-primary mt-3 w-100 p-2">
+              <button className="btn btn-dark rounded-pill m-3">
                 Registrarse
               </button>
-              <small
-                id="passworderror"
-                className="text-light form-text"
-              ></small>
             </div>
           </form>
         </div>

@@ -1,6 +1,5 @@
-.bgprofileimg {
-  background-image: url("https://images.unsplash.com/photo-1527011046414-4781f1f94f8c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fGZvdG9ncmFmJUMzJUFEYXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60");
-}
-.imgfondo {
-  opacity: 0.9;
+.fondo {
+    /* background-image: url("https://images.unsplash.com/photo-1527011046414-4781f1f94f8c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fGZvdG9ncmFmJUMzJUFEYXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60");
+  background-image: url("https://i.blogs.es/2e1ece/podria-cerrar-olympus-division-camaras-rumores-01/1366_2000.jpg"); */
+    background-image: url("https://images.unsplash.com/photo-1598455067079-00aa586e1450?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80");
 }

@@ -1,17 +1,31 @@
-.registro {
+/*.registro {
   margin-top: 150px;
 }
+
+
+*/
+
 .imgFondo {
-  background-image: url("https://images.unsplash.com/photo-1616088886430-ccd86fef0713?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=749&q=80");
-  position: relative;
+  background-image: url("https://images.unsplash.com/photo-1502888395188-799b90b43871?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  overflow: hidden;
+  display: block;
+  margin: auto;
+  width: 100%;
+  height: auto;
+  opacity: 0, 1%;
 }
 
-.body-all {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  font-family: "Montserrat", sans-serif;
-  height: 78vh;
-  margin: -10px 0 50px;
+/*.body-all {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: "Montserrat", sans-serif;
+    height: 78vh;
+    margin: -10px 0 50px;
 }
+*/

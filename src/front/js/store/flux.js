@@ -17,16 +17,32 @@ const getState = ({ getStore, getActions, setStore }) => {
       token: null,
       name: null,
       course: [],
+      video: [],
     },
     actions: {
       // Use getActions to call a function within a fuction
 
-      // //getCourse: () => {
-      //   fetch(process.env.BACKEND_URL + "/api/course")
-      //     .then((data) => data.json())
-      //     .then((data) => setStore({ course: data }));
-      //   //
-      //},
+      getVideo: async () => {
+        try {
+          const resp = await fetch(process.env.BACKEND_URL + "/api/video", {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+            },
+          });
+          const data = await resp.json();
+          setStore({
+            video: data,
+          });
+          console.log(data);
+          return data;
+        } catch (error) {
+          console.log("Error loading message from backend", error);
+        }
+      },
+      exampleFunction: () => {
+        getActions().changeColor(0, "green");
+      },
 
       getCourse: async () => {
         try {
@@ -62,14 +78,20 @@ const getState = ({ getStore, getActions, setStore }) => {
           body: JSON.stringify({ email: email, password: password }),
         });
 
-        if (!resp.ok) throw Error("There was a problem in the login request");
+        // if (!resp.ok) throw Error("There was a problem in the login request");
+        console.log(resp);
 
         if (resp.status === 401) {
-          throw "Invalid credentials";
+          // !resp.ok
+          // throw "Invalid credentials";
+          const error = await resp.json();
+          alert(error.message);
+          console.log(error);
         } else if (resp.status === 400) {
           throw "Invalid email or password format";
         }
         const data = await resp.json();
+        console.log(data);
         // save your token in the localStorage
         //also you should set your user into the store using the setStore function
         localStorage.setItem("jwt-token", data.token); // guardar sesión en el disco duro(token y nombre del user)

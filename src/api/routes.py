@@ -65,7 +65,6 @@ def course_detail(id) :
         data["is_paid"]= True if compra else False   
     return jsonify(data),200
 
-
 @api.route('/user', methods=['GET'])
 def get_users() :
         users = User.query.all()

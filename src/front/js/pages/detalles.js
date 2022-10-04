@@ -1,47 +1,88 @@
-import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import React, { useState, useEffect, useContext } from "react";
+import { Link, useParams } from "react-router-dom";
 import "../../styles/detalles.css";
+import { loadStripe } from "@stripe/stripe-js";
+import { Context } from "../store/appContext";
 
 export const Detalles = () => {
   const [detalles, setDetalles] = useState();
   const params = useParams();
+  const { actions, store } = useContext(Context);
 
   useEffect(() => {
-    fetch(process.env.BACKEND_URL + "/api/course/" + params.id)
+    let confi = {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+
+    if (localStorage.getItem("jwt-token")) {
+      confi = {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + localStorage.getItem("jwt-token"),
+        },
+      };
+    }
+
+    fetch(process.env.BACKEND_URL + "/api/course/" + params.id, confi)
       .then((data) => data.json())
       .then((data) => setDetalles(data));
   }, []);
 
   return detalles ? (
-    <div className="card mb-3 p-4 bg-light">
-      <div class="fond"> </div>
-      <div class="carduno">
-        <div class="thumbnail">
-          <img class="left" src={detalles.imagen} />
+    <div>
+      <div className="fond"> </div>
+      <div className="carduno">
+        <div className="thumbnail">
+          <img className="left" src={detalles.imagen} />
         </div>
-        <div class="right">
-          <div class="author ">
-            <h2 id="nombreprofesor"> {detalles.name}</h2>
+        <div className="right">
+          <div className="author ">
+            <h2 id="nombredelcurso"> {detalles.name}</h2>
           </div>
-          <div class="separator"></div>
+          <div className="separator"></div>
           <p id="descripciondelcurso">{detalles.description}</p>
         </div>
 
         <ul id="iconosdedetalles">
           <li>
-            <i class="fas fa-euro-sign"> valor {detalles.price} </i>
+            <i className="fas fa-euro-sign"> {detalles.price} </i>
           </li>
           <li>
-            <i class="fas fa-hourglass-half"> tiempo {detalles.time} </i>
+            <i className="fas fa-hourglass-half"> Duración {detalles.time} </i>
           </li>
           <li>
-            <small classNameName="text-muted">
+            <small className="text-muted">
               Profesor: {detalles.teacher.name}
             </small>
           </li>
-          <button type="button" class="btn btn-dark">
-            Comprar
-          </button>
+          {store.token ? (
+            detalles.is_paid ? (
+              <Link
+                to={`/start_course/${detalles.id}`}
+                className="btn btn-dark rounded-pill m-3"
+              >
+                <i className="fas fa-video">{"  "} Comenzar </i>
+              </Link>
+            ) : (
+              <Link
+                to={`/pagos/${detalles.id}`}
+                className="btn btn-dark rounded-pill m-3"
+              >
+                <i className="fas fa-shopping-cart">{"  "}Comprar</i>
+              </Link>
+            )
+          ) : (
+            <Link
+              to={`/user_register`}
+              className="btn btn-dark rounded-pill m-3"
+            >
+              <i className="far fa-user"> {""}Crear cuenta </i>
+            </Link>
+          )}
         </ul>
       </div>
     </div>
